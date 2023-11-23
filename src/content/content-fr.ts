@@ -10,13 +10,13 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Ocr_PDF: {
-    title: "OCR PDF",
+  Remove_Page: {
+    title: "Supprimer la Page",
     description:
-      "Transformez les PDF statiques en documents interactifs et interrogeables avec des capacités précises de reconnaissance et de sélection de texte.",
-    color: "#006266",
+      "Supprimez les pages indésirables de votre document PDF et enregistrez le fichier modifié sous forme de nouveau PDF.",
+    color: "#d63031",
     type: ".pdf",
-    to: "/ocr-pdf",
+    to: "/remove-pages",
   },
 };
 
@@ -29,34 +29,35 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "ocr-pdf": [
-      "Votre PDF est maintenant sélectionnable et recherchable !",
-      "Le texte est maintenant sélectionnable et recherchable dans votre PDF !",
-    ],
+    "remove-pages": ["Vos pages ont été supprimées avec succès!"],
   },
 
   btnText: {
-    "ocr-pdf": ["Télécharger PDF", "Télécharger des fichiers"],
+    "remove-pages": [
+      "Télécharger le PDF modifié",
+      "Télécharger les fichiers modifiés",
+    ],
   },
 
   backto: {
-    "ocr-pdf": "Retour à OCR PDF",
+    "remove-pages": "Retour aux pages supprimées",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    ocr_pdf: "Options de reconnaissance de texte pour les PDF",
+    remove_pages: "Options pour supprimer des pages",
   },
-  loader_text: "Veuillez patienter...",
+  loader_text: "veuillez patienter...",
   add_more_button: "Ajouter plus de fichiers",
   action_buttons: {
-    ocr_pdf: "Reconnaissance PDF",
+    remove_pages: "Supprimer des pages",
   },
-  ocr_options: {
-    info: "Choisir les bonnes langues dans le document améliore considérablement la précision de la reconnaissance de texte.",
-    document_languages: "Langues du document",
-    input_placeholder: "Sélectionner des langues",
+  remove_pages_options: {
+    info: "Pour supprimer des pages du document, cliquez dessus. Vous pouvez également utiliser la touche 'shift' pour sélectionner plusieurs pages à la fois.",
+    total_pages: "Total des pages",
+    pages_to_remove: "Pages à supprimer : ",
+    placeholder: "exemple : 2, 8-32",
   },
   pages: "pages",
   page: "page",

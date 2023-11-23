@@ -102,7 +102,7 @@ const EditPage = ({
         />
         {/* {state?.showErrorMessage ? <ErrorElement state={state} /> : null} */}
         <ErrorElement />
-        <AddMoreButton
+        {/* <AddMoreButton
           onClick={() => {
             if (fileInput) {
               fileInput?.current?.click();
@@ -111,7 +111,7 @@ const EditPage = ({
           lang={lang}
           path={statePath}
           text={edit_page.add_more_button}
-        />
+        /> */}
         {/* when clicking on this  */}
         <button
           className="gear-button btn btn-light"

@@ -9,13 +9,13 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Ocr_PDF: {
-    title: "تحويل PDF إلى نص قابل للبحث",
+  Remove_Page: {
+    title: "إزالة الصفحة",
     description:
-      "تحويل ملفات PDF الثابتة إلى مستندات تفاعلية وقابلة للبحث مع إمكانيات دقيقة للتعرف على النص وتحديده.",
-    color: "#006266",
+      "حذف الصفحاتغير المرغوب فيها من مستند PDF الخاص بك وحفظ الملف المعدل كملف PDF جديد.",
+    color: "#d63031",
     type: ".pdf",
-    to: "/ocr-pdf",
+    to: "/remove-pages",
   },
 };
 
@@ -28,37 +28,35 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "ocr-pdf": [
-      "تم إجراء البحث والتحديد في ملف PDF الخاص بك الآن!",
-      "تم إجراء البحث والتحديد في ملفات PDF الخاصة بك الآن!",
-    ],
+    "remove-pages": ["تمت إزالة صفحاتك بنجاح!"],
   },
 
   btnText: {
-    "ocr-pdf": ["تحميل PDF", "تحميل الملفات"],
+    "remove-pages": ["تحميل ملف PDF المعدّل", "تحميل الملفات المعدّلة"],
   },
 
   backto: {
-    "ocr-pdf": "العودة إلى PDF المُحدَّد بتقنية OCR",
+    "remove-pages": "العودة إلى إزالة الصفحات",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    ocr_pdf: "خيارات تحويل PDF إلى نص قابل للبحث",
+    remove_pages: "خيارات إزالة الصفحات",
   },
   loader_text: "يرجى الانتظار...",
   add_more_button: "إضافة المزيد من الملفات",
   action_buttons: {
-    ocr_pdf: "تحويل PDF",
+    remove_pages: "إزالة الصفحات",
   },
-  ocr_options: {
-    info: "اختيار اللغات الصحيحة في الوثيقة يعزز بشكل كبير دقة التعرف على النص.",
-    document_languages: "لغات الوثيقة",
-    input_placeholder: "اختر اللغات",
+  remove_pages_options: {
+    info: "لحذف الصفحات من المستند، انقر عليها. يمكنك أيضًا استخدام مفتاح 'shift' لتحديد عدة صفحات في آن واحد.",
+    total_pages: "إجمالي الصفحات",
+    pages_to_remove: "الصفحات المراد حذفها: ",
+    placeholder: "مثال: 2، 8-32",
   },
-  pages: "صفحة",
-  page: "صفحة واحدة",
+  pages: "الصفحات",
+  page: "صفحة",
 };
 
 export const errors: _errors = {

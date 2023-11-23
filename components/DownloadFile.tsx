@@ -34,9 +34,7 @@ const DownloadFile = ({
         <bdi>
           {downloadFile.titles &&
             downloadFile.titles[path as keyof typeof downloadFile.titles] &&
-            downloadFile.titles[path as keyof typeof downloadFile.titles][
-              files && files.length > 1 ? 0 : 1
-            ]}
+            downloadFile.titles[path as keyof typeof downloadFile.titles][0]}
         </bdi>
       </h3>
       <div className="d-flex align-items-center justify-content-between rounded-circle">

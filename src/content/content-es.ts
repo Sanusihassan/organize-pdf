@@ -10,31 +10,32 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Ocr_PDF: {
-    title: "OCR PDF",
+  Remove_Page: {
+    title: "Eliminar Página",
     description:
-      "Transforma los PDF estáticos en documentos interactivos y buscables con capacidades precisas de reconocimiento y selección de texto.",
-    color: "#006266",
+      "Elimina páginas no deseadas de tu documento PDF y guarda el archivo modificado como un nuevo PDF.",
+    color: "#d63031",
     type: ".pdf",
-    to: "/ocr-pdf",
+    to: "/remove-pages",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    ocr_pdf: "Opciones de OCR para PDF",
+    remove_pages: "Opciones para eliminar páginas",
   },
-  loader_text: "Por favor espera...",
-  add_more_button: "Agrega más archivos",
+  loader_text: "por favor espere...",
+  add_more_button: "Agregar más archivos",
   action_buttons: {
-    ocr_pdf: "OCR de PDF",
+    remove_pages: "Eliminar páginas",
   },
-  ocr_options: {
-    info: "Elegir los idiomas correctos en el documento aumenta significativamente la precisión del reconocimiento de texto.",
-    document_languages: "Idiomas del documento",
-    input_placeholder: "Seleccionar idiomas",
+  remove_pages_options: {
+    info: "Para eliminar páginas del documento, haz clic en ellas. También puedes usar la tecla 'shift' para seleccionar varias páginas a la vez.",
+    total_pages: "Total de páginas",
+    pages_to_remove: "Páginas a eliminar: ",
+    placeholder: "ejemplo: 2, 8-32",
   },
-  pages: "paginas",
+  pages: "páginas",
   page: "página",
 };
 
@@ -47,18 +48,18 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "ocr-pdf": [
-      "¡Tu PDF ahora es seleccionable y searchable!",
-      "¡El texto ahora es seleccionable y searchable en tu PDF!",
-    ],
+    "remove-pages": ["¡Tus páginas se han eliminado con éxito!"],
   },
 
   btnText: {
-    "ocr-pdf": ["Descargar PDF", "Descargar PDFs"],
+    "remove-pages": [
+      "Descargar PDF modificado",
+      "Descargar archivos modificados",
+    ],
   },
 
   backto: {
-    "ocr-pdf": "Volver a OCR PDF",
+    "remove-pages": "Volver a Eliminar páginas",
   },
 };
 

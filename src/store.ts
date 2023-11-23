@@ -13,7 +13,8 @@ export interface ToolState {
   showDownloadBtn: boolean;
   showOptions: boolean;
   nav_height: number;
-  selectedLanguages: { value: string; label: string }[];
+  selectedPages: string;
+  pageCount: number;
 }
 
 const initialState: ToolState = {
@@ -29,7 +30,8 @@ const initialState: ToolState = {
   showDownloadBtn: false,
   showOptions: false,
   nav_height: 0,
-  selectedLanguages: [],
+  selectedPages: "",
+  pageCount: 0,
 };
 
 const toolSlice = createSlice({
@@ -79,11 +81,8 @@ const toolSlice = createSlice({
     setNavHeight(state: ToolState, action: PayloadAction<number>) {
       state.nav_height = action.payload;
     },
-    setSelectedLanguages(
-      state: ToolState,
-      action: PayloadAction<{ value: string; label: string }[]>
-    ) {
-      state.selectedLanguages = action.payload;
+    setPageCount(state: ToolState, action: PayloadAction<number>) {
+      state.pageCount = action.payload;
     },
   },
 });
@@ -102,7 +101,7 @@ export const {
   setShowDownloadBtn,
   setShowOptions,
   setNavHeight,
-  setSelectedLanguages,
+  setPageCount,
 } = toolSlice.actions;
 
 export default toolSlice.reducer;

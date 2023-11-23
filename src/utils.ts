@@ -295,3 +295,45 @@ export async function calculatePages(file: PDFFile): Promise<number> {
     };
   });
 }
+
+export async function getNthPageAsImage(
+  file: File,
+  dispatch: Dispatch<AnyAction>,
+  errors: _,
+  pageNumber: number
+): Promise<string> {
+  const fileUrl = URL.createObjectURL(file);
+  if (!file.size) {
+    return emptyPDFHandler(dispatch, errors);
+  } else {
+    try {
+      const loadingTask = getDocument(fileUrl);
+      const pdf: PDFDocumentProxy = await loadingTask.promise;
+      const page = await pdf.getPage(pageNumber); // Get the Nth page
+
+      const scale = 1.5;
+      const viewport: PageViewport = page.getViewport({ scale });
+
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+      if (!context) {
+        throw new Error("Canvas context not available.");
+      }
+      canvas.height = viewport.height;
+      canvas.width = viewport.width;
+
+      const renderTask: RenderTask = page.render({
+        canvasContext: context,
+        viewport: viewport,
+      });
+
+      await renderTask.promise;
+
+      return canvas.toDataURL();
+    } catch (error) {
+      dispatch(setErrorMessage(errors.FILE_CORRUPT.message));
+      console.log(error);
+      return DEFAULT_PDF_IMAGE; // Return the placeholder image URL when an error occurs
+    }
+  }
+}

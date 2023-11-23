@@ -10,46 +10,47 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Ocr_PDF: {
-    title: "OCR PDF",
+  Remove_Page: {
+    title: "पृष्ठ हटाएं",
     description:
-      "स्थैतिक पीडीएफ को इंटरैक्टिव और खोजने योग्य दस्तावेज़ में बदलें, सटीक पाठ पहचान और चयन क्षमताओं के साथ।",
-    color: "#006266",
+      "अपने पीडीएफ दस्तावेज़ से अनचाहे पृष्ठों को हटाएं और संशोधित फ़ाइल को नए पीडीएफ के रूप में सहेजें।",
+    color: "#d63031",
     type: ".pdf",
-    to: "/ocr-pdf",
+    to: "/remove-pages",
   },
 };
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "ocr-pdf": [
-      "आपका पीडीएफ अब चयन किया जा सकता है और खोजा जा सकता है!",
-      "आपके पीडीएफ फ़ाइल अब चयन किया जा सकता है और खोजा जा सकता है!",
-    ],
+    "remove-pages": ["आपके पृष्ठ सफलतापूर्वक हटाए गए हैं!"],
   },
 
   btnText: {
-    "ocr-pdf": ["पीडीएफ डाउनलोड करें", "फ़ाइलें डाउनलोड करें"],
+    "remove-pages": [
+      "संशोधित पीडीएफ डाउनलोड करें",
+      "संशोधित फ़ाइलें डाउनलोड करें",
+    ],
   },
 
   backto: {
-    "ocr-pdf": "OCR पीडीएफ पर वापस जाएं",
+    "remove-pages": "पृष्ठ हटाने पर वापस जाएं",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    ocr_pdf: "OCR PDF विकल्प",
+    remove_pages: "पृष्ठ हटाने के विकल्प",
   },
   loader_text: "कृपया प्रतीक्षा करें...",
-  add_more_button: "अधिक फ़ाइलें जोड़ें",
+  add_more_button: "और फ़ाइलें जोड़ें",
   action_buttons: {
-    ocr_pdf: "OCR PDF",
+    remove_pages: "पृष्ठ हटाएं",
   },
-  ocr_options: {
-    info: "दस्तावेज़ में सही भाषाएं चुनने से पाठ पहचान की सटीकता को काफी बढ़ाया जा सकता है।",
-    document_languages: "दस्तावेज़ की भाषाएँ",
-    input_placeholder: "भाषाएँ चुनें",
+  remove_pages_options: {
+    info: "दस्तावेज़ से पृष्ठों को हटाने के लिए उन पर क्लिक करें। आप एक साथ कई पृष्ठों का चयन करने के लिए 'shift' कुंजी भी प्रयोग कर सकते हैं।",
+    total_pages: "कुल पृष्ठ",
+    pages_to_remove: "हटाने वाले पृष्ठ: ",
+    placeholder: "उदाहरण: 2, 8-32",
   },
   pages: "पृष्ठों",
   page: "पृष्ठ",

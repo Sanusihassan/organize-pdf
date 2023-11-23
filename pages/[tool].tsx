@@ -66,5 +66,5 @@ export default ({ item }: { item: data_type }) => {
 
 // export default ToolPage;
 export const routes = {
-  "/ocr-pdf": { item: tool["Ocr_PDF"] },
+  "/remove-pages": { item: tool["Remove_Page"] },
 };

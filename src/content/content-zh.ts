@@ -10,42 +10,44 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Ocr_PDF: {
-    title: "OCR PDF",
+  Remove_Page: {
+    title: "删除页面",
     description:
-      "将静态PDF转换为具有精确文本识别和选择功能的交互式可搜索文档。",
-    color: "#006266",
+      "从您的PDF文档中删除不需要的页面，并将修改后的文件保存为新的PDF。",
+    color: "#d63031",
     type: ".pdf",
-    to: "/ocr-pdf",
+    to: "/remove-pages",
   },
 };
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "ocr-pdf": ["您的PDF现在可选择和搜索！", "您的PDF文件现在可选择和搜索！"],
+    "remove-pages": ["您的页面已成功删除！"],
   },
 
   btnText: {
-    "ocr-pdf": ["下载PDF", "下载文件"],
+    "remove-pages": ["下载修改后的PDF", "下载修改后的文件"],
   },
 
   backto: {
-    "ocr-pdf": "返回OCR PDF",
+    "remove-pages": "返回到删除页面",
   },
 };
+
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    ocr_pdf: "OCR PDF 选项",
+    remove_pages: "删除页面选项",
   },
-  loader_text: "请稍等...",
+  loader_text: "请稍候...",
   add_more_button: "添加更多文件",
   action_buttons: {
-    ocr_pdf: "OCR PDF",
+    remove_pages: "删除页面",
   },
-  ocr_options: {
-    info: "选择正确的文档语言可以显著提高文本识别的准确性。",
-    document_languages: "文档语言",
-    input_placeholder: "选择语言",
+  remove_pages_options: {
+    info: "要从文档中删除页面，请单击相应页面。您也可以使用“shift”键一次选择多个页面。",
+    total_pages: "总页面数",
+    pages_to_remove: "要删除的页面：",
+    placeholder: "示例：2，8-32",
   },
   pages: "页",
   page: "页",
