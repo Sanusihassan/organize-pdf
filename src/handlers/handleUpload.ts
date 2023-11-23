@@ -23,7 +23,7 @@ export const handleUpload = async (
   errors: _,
   filesLengthOnSubmit: number,
   setFilesLengthOnSubmit: (value: number) => void,
-  selectedLanguages: { value: string; label: string }[]
+  selectedPages: string
 ) => {
   e.preventDefault();
   dispatch(setIsSubmitted(true));
@@ -41,7 +41,7 @@ export const handleUpload = async (
     formData.append("files", files[i]);
   }
   // selected languages
-  formData.append("selectedLanguages", JSON.stringify(selectedLanguages));
+  formData.append("selectedPages", selectedPages);
   let url;
   // @ts-ignore
   if (process.env.NODE_ENV === "development") {

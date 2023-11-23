@@ -43,11 +43,12 @@ const Files = ({
     <>
       {files.length > 0 ? (
         <FileCard
-          file={files[0]}
           errors={errors}
+          file={files[0]}
           loader_text={loader_text}
           fileDetailProps={fileDetailProps}
           extension={extension}
+          layout="extract"
         />
       ) : null}
     </>

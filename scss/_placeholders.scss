@@ -3,3 +3,17 @@
   background-color: darken(#f8f9fa, 20%);
   border-color: darken(#f8f9fa, 20%);
 }
+
+%check-icon {
+  stroke: map-get($color-map, "remove-pages");
+  top: 1%;
+  left: 1%;
+  width: 1.5em;
+  height: 1.5em;
+  @include extend("position-absolute");
+
+  @include ar-wrapper {
+    left: unset;
+    right: 1%;
+  }
+}

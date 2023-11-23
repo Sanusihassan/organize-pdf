@@ -37,11 +37,6 @@
   outline: 1px solid;
 }
 
-@import "./scss/minxins";
-@import "./scss/placeholders";
-@include list-group;
-@include api;
-
 $pdf-color: #fc271c;
 $color-map: (
   "merge-pdf": $pdf-color,
@@ -64,6 +59,11 @@ $color-map: (
   "translate-pdf": #185abc,
   "remove-pages": #d63031,
 );
+
+@import "./scss/minxins";
+@import "./scss/placeholders";
+@include list-group;
+@include api;
 
 // html,
 // body,

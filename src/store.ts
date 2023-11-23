@@ -84,6 +84,15 @@ const toolSlice = createSlice({
     setPageCount(state: ToolState, action: PayloadAction<number>) {
       state.pageCount = action.payload;
     },
+    setSelectedPages(state: ToolState, action: PayloadAction<string>) {
+      if (action.payload === "undefined") {
+        state.selectedPages = "";
+      } else {
+        state.selectedPages = action.payload
+          .replace(/0-/g, "")
+          .replace(/0,/g, "");
+      }
+    },
   },
 });
 
@@ -102,6 +111,7 @@ export const {
   setShowOptions,
   setNavHeight,
   setPageCount,
+  setSelectedPages
 } = toolSlice.actions;
 
 export default toolSlice.reducer;
