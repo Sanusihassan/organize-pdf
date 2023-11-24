@@ -10,9 +10,9 @@ import type {
 
 export const tool: _tool = {
   Remove_Page: {
-    title: "إزالة الصفحة",
+    title: "إزالة الصفحات",
     description:
-      "حذف الصفحاتغير المرغوب فيها من مستند PDF الخاص بك وحفظ الملف المعدل كملف PDF جديد.",
+      "حذف الصفحات غير المرغوب فيها من مستند PDF الخاص بك وحفظ الملف المعدل كملف PDF جديد.",
     color: "#d63031",
     type: ".pdf",
     to: "/remove-pages",
