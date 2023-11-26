@@ -10,30 +10,23 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Remove_Page: {
-    title: "Eliminar Página",
+  Organize_PDF: {
+    title: "Organizar PDF",
     description:
-      "Elimina páginas no deseadas de tu documento PDF y guarda el archivo modificado como un nuevo PDF.",
-    color: "#d63031",
+      "Reordena fácilmente las páginas de tu documento PDF según tu orden o secuencia preferidos.",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/remove-pages",
+    to: "/organize-pdf",
   },
 };
-
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    remove_pages: "Opciones para eliminar páginas",
+    organize_pdf: "Opciones para organizar PDF",
   },
-  loader_text: "por favor espere...",
+  loader_text: "Por favor, espera...",
   add_more_button: "Agregar más archivos",
   action_buttons: {
-    remove_pages: "Eliminar páginas",
-  },
-  remove_pages_options: {
-    info: "Para eliminar páginas del documento, haz clic en ellas. También puedes usar la tecla 'shift' para seleccionar varias páginas a la vez.",
-    total_pages: "Total de páginas",
-    pages_to_remove: "Páginas a eliminar: ",
-    placeholder: "ejemplo: 2, 8-32",
+    organize_pdf: "Organizar PDF",
   },
   pages: "páginas",
   page: "página",

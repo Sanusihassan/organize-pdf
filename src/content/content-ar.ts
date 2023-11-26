@@ -9,13 +9,13 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Remove_Page: {
-    title: "إزالة الصفحات",
+  Organize_PDF: {
+    title: "تنظيم ملف PDF",
     description:
-      "حذف الصفحات غير المرغوب فيها من مستند PDF الخاص بك وحفظ الملف المعدل كملف PDF جديد.",
-    color: "#d63031",
+      "إعادة ترتيب صفحات مستند PDF بسهولة لتناسب الترتيب أو التسلسل المفضل لديك.",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/remove-pages",
+    to: "/organize-pdf",
   },
 };
 
@@ -42,22 +42,17 @@ export const downloadFile: _downloadFile = {
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    remove_pages: "خيارات إزالة الصفحات",
+    organize_pdf: "خيارات تنظيم ملفات PDF",
   },
   loader_text: "يرجى الانتظار...",
   add_more_button: "إضافة المزيد من الملفات",
   action_buttons: {
-    remove_pages: "إزالة الصفحات",
+    organize_pdf: "تنظيم ملف PDF",
   },
-  remove_pages_options: {
-    info: "لحذف الصفحات من المستند، انقر عليها. يمكنك أيضًا استخدام مفتاح 'shift' لتحديد عدة صفحات في آن واحد.",
-    total_pages: "إجمالي الصفحات",
-    pages_to_remove: "الصفحات المراد حذفها: ",
-    placeholder: "مثال: 2، 8-32",
-  },
-  pages: "الصفحات",
+  pages: "صفحات",
   page: "صفحة",
 };
+
 
 export const errors: _errors = {
   EMPTY_FILE: {

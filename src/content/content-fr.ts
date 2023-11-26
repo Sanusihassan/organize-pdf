@@ -10,13 +10,13 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Remove_Page: {
-    title: "Supprimer la Page",
+  Organize_PDF: {
+    title: "Organiser PDF",
     description:
-      "Supprimez les pages indésirables de votre document PDF et enregistrez le fichier modifié sous forme de nouveau PDF.",
-    color: "#d63031",
+      "Réorganisez facilement les pages de votre document PDF selon votre ordre ou séquence préférés.",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/remove-pages",
+    to: "/organize-pdf",
   },
 };
 
@@ -46,18 +46,12 @@ export const downloadFile: _downloadFile = {
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    remove_pages: "Options pour supprimer des pages",
+    organize_pdf: "Options pour organiser les PDF",
   },
-  loader_text: "veuillez patienter...",
+  loader_text: "Veuillez patienter...",
   add_more_button: "Ajouter plus de fichiers",
   action_buttons: {
-    remove_pages: "Supprimer des pages",
-  },
-  remove_pages_options: {
-    info: "Pour supprimer des pages du document, cliquez dessus. Vous pouvez également utiliser la touche 'shift' pour sélectionner plusieurs pages à la fois.",
-    total_pages: "Total des pages",
-    pages_to_remove: "Pages à supprimer : ",
-    placeholder: "exemple : 2, 8-32",
+    organize_pdf: "Organiser le PDF",
   },
   pages: "pages",
   page: "page",

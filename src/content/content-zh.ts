@@ -10,13 +10,12 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Remove_Page: {
-    title: "删除页面",
-    description:
-      "从您的PDF文档中删除不需要的页面，并将修改后的文件保存为新的PDF。",
-    color: "#d63031",
+  Organize_PDF: {
+    title: "整理 PDF",
+    description: "轻松重新排列 PDF 文档中的页面，以符合您的首选顺序或顺序。",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/remove-pages",
+    to: "/organize-pdf",
   },
 };
 
@@ -36,18 +35,12 @@ export const downloadFile: _downloadFile = {
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    remove_pages: "删除页面选项",
+    organize_pdf: "整理 PDF 选项",
   },
   loader_text: "请稍候...",
   add_more_button: "添加更多文件",
   action_buttons: {
-    remove_pages: "删除页面",
-  },
-  remove_pages_options: {
-    info: "要从文档中删除页面，请单击相应页面。您也可以使用“shift”键一次选择多个页面。",
-    total_pages: "总页面数",
-    pages_to_remove: "要删除的页面：",
-    placeholder: "示例：2，8-32",
+    organize_pdf: "整理 PDF",
   },
   pages: "页",
   page: "页",

@@ -10,13 +10,13 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Remove_Page: {
-    title: "पृष्ठ हटाएं",
+  Organize_PDF: {
+    title: "पीडीएफ संगठित करें",
     description:
-      "अपने पीडीएफ दस्तावेज़ से अनचाहे पृष्ठों को हटाएं और संशोधित फ़ाइल को नए पीडीएफ के रूप में सहेजें।",
-    color: "#d63031",
+      "अपने पसंदीदा क्रम या क्रम के अनुसार अपने पीडीएफ दस्तावेज़ की पृष्ठों को आसानी से व्यवस्थित करें।",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/remove-pages",
+    to: "/organize-pdf",
   },
 };
 
@@ -39,23 +39,16 @@ export const downloadFile: _downloadFile = {
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    remove_pages: "पृष्ठ हटाने के विकल्प",
+    organize_pdf: "पीडीएफ संगठन विकल्प",
   },
   loader_text: "कृपया प्रतीक्षा करें...",
   add_more_button: "और फ़ाइलें जोड़ें",
   action_buttons: {
-    remove_pages: "पृष्ठ हटाएं",
+    organize_pdf: "पीडीएफ संगठित करें",
   },
-  remove_pages_options: {
-    info: "दस्तावेज़ से पृष्ठों को हटाने के लिए उन पर क्लिक करें। आप एक साथ कई पृष्ठों का चयन करने के लिए 'shift' कुंजी भी प्रयोग कर सकते हैं।",
-    total_pages: "कुल पृष्ठ",
-    pages_to_remove: "हटाने वाले पृष्ठ: ",
-    placeholder: "उदाहरण: 2, 8-32",
-  },
-  pages: "पृष्ठों",
+  pages: "पृष्ठ",
   page: "पृष्ठ",
 };
-
 export const tools: _tools = {
   select: "चुनें",
   or_drop: "या फ़ाइलें यहां छोड़ें",
