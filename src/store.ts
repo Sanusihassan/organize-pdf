@@ -13,7 +13,7 @@ export interface ToolState {
   showDownloadBtn: boolean;
   showOptions: boolean;
   nav_height: number;
-  selectedPages: string;
+  pageOrders: number[];
   pageCount: number;
 }
 
@@ -30,7 +30,7 @@ const initialState: ToolState = {
   showDownloadBtn: false,
   showOptions: false,
   nav_height: 0,
-  selectedPages: "",
+  pageOrders: [],
   pageCount: 0,
 };
 
@@ -84,15 +84,10 @@ const toolSlice = createSlice({
     setPageCount(state: ToolState, action: PayloadAction<number>) {
       state.pageCount = action.payload;
     },
-    setSelectedPages(state: ToolState, action: PayloadAction<string>) {
-      if (action.payload === "undefined") {
-        state.selectedPages = "";
-      } else {
-        state.selectedPages = action.payload
-          .replace(/0-/g, "")
-          .replace(/0,/g, "");
-      }
+    setPageOrders(state: ToolState, action: PayloadAction<number[]>) {
+      state.pageOrders = action.payload;
     },
+
   },
 });
 
@@ -111,7 +106,7 @@ export const {
   setShowOptions,
   setNavHeight,
   setPageCount,
-  setSelectedPages
+  setPageOrders
 } = toolSlice.actions;
 
 export default toolSlice.reducer;

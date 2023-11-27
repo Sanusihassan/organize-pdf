@@ -26,7 +26,7 @@ import {
   setShowOptions,
 } from "../src/store";
 import { useFileStore } from "../src/file-store";
-import AddMoreButton from "./EditArea/AddMoreButton";
+// import AddMoreButton from "./EditArea/AddMoreButton";
 import { SubmitBtn } from "./EditArea/SubmitBtn";
 
 type editPageProps = {
@@ -48,9 +48,9 @@ const EditPage = ({
   lang,
   errors,
 }: editPageProps) => {
-  const [isOnline, setIsOnline] = useState(true);
-  const handleOnlineStatus = () => setIsOnline(true);
-  const handleOfflineStatus = () => setIsOnline(false);
+  // const [isOnline, setIsOnline] = useState(true);
+  // const handleOnlineStatus = () => setIsOnline(true);
+  // const handleOfflineStatus = () => setIsOnline(false);
   // const [showOptions, setShowOptions] = useState(false);
   // state variables:
   const errorCode = useSelector(
@@ -73,7 +73,7 @@ const EditPage = ({
   );
   const dispatch = useDispatch();
   // actual files;
-  const { files, setFiles, fileInput, submitBtn } = useFileStore();
+  const { files } = useFileStore();
   useEffect(() => {
     if (errorCode == "ERR_NO_FILES_SELECTED" && files.length > 0) {
       dispatch(resetErrorMessage());
