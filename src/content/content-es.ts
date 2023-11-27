@@ -10,30 +10,23 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Remove_Page: {
-    title: "Eliminar Página",
+  Organize_PDF: {
+    title: "Organizar PDF",
     description:
-      "Elimina páginas no deseadas de tu documento PDF y guarda el archivo modificado como un nuevo PDF.",
-    color: "#d63031",
+      "Reordena fácilmente las páginas de tu documento PDF según tu orden o secuencia preferidos.",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/remove-pages",
+    to: "/organize-pdf",
   },
 };
-
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    remove_pages: "Opciones para eliminar páginas",
+    organize_pdf: "Opciones para organizar PDF",
   },
-  loader_text: "por favor espere...",
+  loader_text: "Por favor, espera...",
   add_more_button: "Agregar más archivos",
   action_buttons: {
-    remove_pages: "Eliminar páginas",
-  },
-  remove_pages_options: {
-    info: "Para eliminar páginas del documento, haz clic en ellas. También puedes usar la tecla 'shift' para seleccionar varias páginas a la vez.",
-    total_pages: "Total de páginas",
-    pages_to_remove: "Páginas a eliminar: ",
-    placeholder: "ejemplo: 2, 8-32",
+    organize_pdf: "Organizar PDF",
   },
   pages: "páginas",
   page: "página",
@@ -48,18 +41,16 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "remove-pages": ["¡Tus páginas se han eliminado con éxito!"],
+    "organize-pdf": ["Tus páginas se han organizado correctamente!"],
   },
-
   btnText: {
-    "remove-pages": [
+    "organize-pdf": [
       "Descargar PDF modificado",
       "Descargar archivos modificados",
     ],
   },
-
   backto: {
-    "remove-pages": "Volver a Eliminar páginas",
+    "organize-pdf": "Volver a Organizar PDF",
   },
 };
 
@@ -77,35 +68,8 @@ export const errors: _errors = {
     message: "El archivo no es un tipo compatible.",
     types: {
       PDF: "Por favor, elija un archivo PDF válido.",
-      JPG: "Por favor, elija un archivo de imagen JPEG válido.",
-      DOC: "Por favor, elija un archivo de documento de Word válido.",
-      DOCX: "Por favor, elija un archivo de documento de Word válido.",
-      XLS: "Por favor, elija un archivo de hoja de cálculo de Excel válido.",
-      XLSX: "Por favor, elija un archivo de hoja de cálculo de Excel válido.",
-      PPT: "Por favor, elija un archivo de presentación de PowerPoint válido.",
-      PPTX: "Por favor, elija un archivo de presentación de PowerPoint válido.",
     },
     code: "ERR_INVALID_FILE_TYPE",
-  },
-  FILE_CORRUPT: {
-    message:
-      "El archivo estácorrupto y no se puede procesar. Por favor, elija un archivo válido.",
-    code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "El archivo contiene fuentes faltantes. Por favor, asegúrese de que todas las fuentes estén incrustadas en el archivo PDF.",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "El archivo contiene datos de imagen no válidos. Por favor, asegúrese de que todas las imágenes estén correctamente formateadas.",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "El archivo contiene un riesgo de seguridad y no se puede procesar. Por favor, elija un archivo válido.",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -126,9 +90,5 @@ export const errors: _errors = {
     message:
       "Ha ocurrido un error en la red. Por favor, comprueba tu conexión a internet e inténtalo de nuevo.",
     code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "Por favor, suba al menos dos archivos para fusionar.",
-    code: "ERR_UPLOAD_COUNT",
   },
 };

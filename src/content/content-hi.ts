@@ -10,52 +10,43 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Remove_Page: {
-    title: "पृष्ठ हटाएं",
+  Organize_PDF: {
+    title: "पीडीएफ संगठित करें",
     description:
-      "अपने पीडीएफ दस्तावेज़ से अनचाहे पृष्ठों को हटाएं और संशोधित फ़ाइल को नए पीडीएफ के रूप में सहेजें।",
-    color: "#d63031",
+      "अपने पसंदीदा क्रम या क्रम के अनुसार अपने पीडीएफ दस्तावेज़ की पृष्ठों को आसानी से व्यवस्थित करें।",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/remove-pages",
+    to: "/organize-pdf",
   },
 };
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "remove-pages": ["आपके पृष्ठ सफलतापूर्वक हटाए गए हैं!"],
+    "organize-pdf": ["आपके पेज सफलतापूर्वक संगठित किए गए हैं!"],
   },
-
   btnText: {
-    "remove-pages": [
-      "संशोधित पीडीएफ डाउनलोड करें",
+    "organize-pdf": [
+      "संशोधित PDF डाउनलोड करें",
       "संशोधित फ़ाइलें डाउनलोड करें",
     ],
   },
-
   backto: {
-    "remove-pages": "पृष्ठ हटाने पर वापस जाएं",
+    "organize-pdf": "PDF संगठन पर वापस जाएं",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    remove_pages: "पृष्ठ हटाने के विकल्प",
+    organize_pdf: "पीडीएफ संगठन विकल्प",
   },
   loader_text: "कृपया प्रतीक्षा करें...",
   add_more_button: "और फ़ाइलें जोड़ें",
   action_buttons: {
-    remove_pages: "पृष्ठ हटाएं",
+    organize_pdf: "पीडीएफ संगठित करें",
   },
-  remove_pages_options: {
-    info: "दस्तावेज़ से पृष्ठों को हटाने के लिए उन पर क्लिक करें। आप एक साथ कई पृष्ठों का चयन करने के लिए 'shift' कुंजी भी प्रयोग कर सकते हैं।",
-    total_pages: "कुल पृष्ठ",
-    pages_to_remove: "हटाने वाले पृष्ठ: ",
-    placeholder: "उदाहरण: 2, 8-32",
-  },
-  pages: "पृष्ठों",
+  pages: "पृष्ठ",
   page: "पृष्ठ",
 };
-
 export const tools: _tools = {
   select: "चुनें",
   or_drop: "या फ़ाइलें यहां छोड़ें",
@@ -77,35 +68,8 @@ export const errors: _errors = {
     message: "फ़ाइल एक समर्थित प्रकार नहीं है।",
     types: {
       PDF: "कृपया एक मान्य पीडीएफ़फ़ाइल चुनें।",
-      JPG: "कृपया एक मान्य जेपेग छवि फ़ाइल चुनें।",
-      DOC: "कृपया एक मान्य वर्ड दस्तावेज़ फ़ाइल चुनें।",
-      DOCX: "कृपया एक मान्य वर्ड दस्तावेज़ फ़ाइल चुनें।",
-      XLS: "कृपया एक मान्य एक्सेल स्प्रेडशीट फ़ाइल चुनें।",
-      XLSX: "कृपया एक मान्य एक्सेल स्प्रेडशीट फ़ाइल चुनें।",
-      PPT: "कृपया एक मान्यपावरपॉइंट प्रस्तुति फ़ाइल चुनें।",
-      PPTX: "कृपया एक मान्य पावरपॉइंट प्रस्तुति फ़ाइल चुनें।",
     },
     code: "ERR_INVALID_FILE_TYPE",
-  },
-  FILE_CORRUPT: {
-    message:
-      "फ़ाइल का डाटा भ्रष्ट है और इसे प्रसंस्करण नहीं किया जा सकता है। कृपया एक मान्य फ़ाइल चुनें।",
-    code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "फ़ाइल में फ़ॉन्ट गुम हैं। कृपया सुनिश्चित करें कि पीडीएफफ़ाइल में सभी फ़ॉन्ट एम्बेड हैं।",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "फ़ाइल में अवैध छवि डेटा है। कृपया सुनिश्चित करें कि सभी छवियाँ सही ढंग से फ़ॉर्मेटेड हैं।",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "फ़ाइल में सुरक्षा जोखिम हो सकता है और इसे प्रसंस्करण नहीं किया जा सकता है। कृपया एक मान्य फ़ाइल चुनें।",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -125,10 +89,5 @@ export const errors: _errors = {
     message:
       "नेटवर्क में त्रुटि हो गई है। कृपया अपना इंटरनेट कनेक्शन जांचें और पुनः प्रयास करें।",
     code: "ERR_NETWORK",
-  },
-
-  ERR_UPLOAD_COUNT: {
-    message: "कृपया फ्यूजन करने के लिए कम से कम दो फ़ाइलें अपलोड करें।",
-    code: "ERR_UPLOAD_COUNT",
   },
 };

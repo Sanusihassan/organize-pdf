@@ -16,6 +16,7 @@
     // min-height: 300px;
     padding: 10px;
     align-items: stretch;
+    @include extend("position-relative");
   }
 
   .initial-loader {
@@ -24,9 +25,7 @@
     @include extend("d-flex justify-content-center align-items-center");
   }
 
-
   .drag-element {
-
     .image-tooltip,
     .item-tooltip {
       height: 100%;
@@ -101,7 +100,7 @@
   .range-file-card {
     &:not(.one-item-grid) {
       display: grid;
-      grid-template-columns: 2fr .5fr 2fr;
+      grid-template-columns: 2fr 0.5fr 2fr;
     }
 
     &.one-item-grid {

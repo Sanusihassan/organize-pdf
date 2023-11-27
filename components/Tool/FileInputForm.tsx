@@ -45,8 +45,8 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
     (state: { tool: ToolState }) => state.tool.errorMessage
   );
 
-  const selectedPages = useSelector(
-    (state: { tool: ToolState }) => state.tool.selectedPages
+  const pageOrders = useSelector(
+    (state: { tool: ToolState }) => state.tool.pageOrders
   );
   const dispatch = useDispatch();
   // file store
@@ -102,7 +102,7 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
           errors,
           filesLengthOnSubmit,
           setFilesLengthOnSubmit,
-          selectedPages
+          pageOrders
         )
       }
       method="POST"

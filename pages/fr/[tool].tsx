@@ -61,5 +61,5 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
 };
 
 export const routes = {
-  "/remove-pages": { item: tool["Remove_Page"] },
+  "/organize-pdf": { item: tool["Organize_PDF"] },
 };

@@ -9,13 +9,13 @@ import type {
 } from "../../content";
 
 export const tool: _tool = {
-  Remove_Page: {
-    title: "إزالة الصفحات",
+  Organize_PDF: {
+    title: "تنظيم ملف PDF",
     description:
-      "حذف الصفحات غير المرغوب فيها من مستند PDF الخاص بك وحفظ الملف المعدل كملف PDF جديد.",
-    color: "#d63031",
+      "إعادة ترتيب صفحات مستند PDF بسهولة لتناسب الترتيب أو التسلسل المفضل لديك.",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/remove-pages",
+    to: "/organize-pdf",
   },
 };
 
@@ -28,34 +28,26 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "remove-pages": ["تمت إزالة صفحاتك بنجاح!"],
+    "organize-pdf": ["تم تنظيم صفحاتك بنجاح!"],
   },
-
   btnText: {
-    "remove-pages": ["تحميل ملف PDF المعدّل", "تحميل الملفات المعدّلة"],
+    "organize-pdf": ["تحميل ملف PDF المعدّل", "تحميل الملفات المعدّلة"],
   },
-
   backto: {
-    "remove-pages": "العودة إلى إزالة الصفحات",
+    "organize-pdf": "العودة إلى تنظيم PDF",
   },
 };
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    remove_pages: "خيارات إزالة الصفحات",
+    organize_pdf: "خيارات تنظيم ملفات PDF",
   },
   loader_text: "يرجى الانتظار...",
   add_more_button: "إضافة المزيد من الملفات",
   action_buttons: {
-    remove_pages: "إزالة الصفحات",
+    organize_pdf: "تنظيم ملف PDF",
   },
-  remove_pages_options: {
-    info: "لحذف الصفحات من المستند، انقر عليها. يمكنك أيضًا استخدام مفتاح 'shift' لتحديد عدة صفحات في آن واحد.",
-    total_pages: "إجمالي الصفحات",
-    pages_to_remove: "الصفحات المراد حذفها: ",
-    placeholder: "مثال: 2، 8-32",
-  },
-  pages: "الصفحات",
+  pages: "صفحات",
   page: "صفحة",
 };
 
@@ -73,34 +65,8 @@ export const errors: _errors = {
     message: "الملف غير مدعوم.",
     types: {
       PDF: "يرجى اختيار ملف PDF صالح.",
-      JPG: "يرجى اختيار ملف صورة JPEG صالح.",
-      DOC: "يرجى اختيار ملف مستند Word صالح.",
-      DOCX: "يرجى اختيار ملف مستند Word صالح.",
-      XLS: "يرجى اختيار ملف جدول بيانات Excel صالح.",
-      XLSX: "يرجى اختيارملف جدول بيانات Excel صالح.",
-      PPT: "يرجى اختيار ملف عرض تقديمي PowerPoint صالح.",
-      PPTX: "يرجى اختيار ملف عرض تقديمي PowerPoint صالح.",
     },
     code: "ERR_INVALID_FILE_TYPE",
-  },
-  FILE_CORRUPT: {
-    message: "الملف تالف ولا يمكن معالجته. يرجى اختيار ملف صالح.",
-    code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "الملف يحتوي على خطوط أحرف مفقودة. يرجى التأكد من تضمين جميع الخطوط في ملف PDF.",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "الملف يحتوي على بيانات صورة غير صالحة. يرجى التأكد من تنسيق جميع الصور بشكل صحيح.",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "الملف يحتوي على مخاطر أمان ولا يمكن معالجته. يرجى اختيار ملف صالح.",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -120,9 +86,5 @@ export const errors: _errors = {
     message:
       "حدث خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
     code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "يرجى رفع ملفين على الأقل للدمج.",
-    code: "ERR_UPLOAD_COUNT",
   },
 };

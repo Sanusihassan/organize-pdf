@@ -48,7 +48,6 @@ const Files = ({
           loader_text={loader_text}
           fileDetailProps={fileDetailProps}
           extension={extension}
-          layout="extract"
         />
       ) : null}
     </>

@@ -64,7 +64,6 @@ export default ({ item }: { item: data_type }) => {
   );
 };
 
-// export default ToolPage;
 export const routes = {
-  "/remove-pages": { item: tool["Remove_Page"] },
+  "/organize-pdf": { item: tool["Organize_PDF"] },
 };

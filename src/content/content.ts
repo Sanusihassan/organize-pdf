@@ -1,40 +1,49 @@
+// i.e rearange pdf
 export const tool = {
-  Remove_Page: {
-    title: "Remove Page",
+  // now please give me 5 verisons of this object with the same object name i.e Organize_PDF and the same keys but only change or translate the string values to ar, es, fr, hi and zh respectively
+  Organize_PDF: {
+    title: "Organize PDF",
     description:
-      "Delete unwanted pages from your PDF document and save the modified file as a new PDF.",
-    color: "#d63031",
+      "Effortlessly rearrange the pages in your PDF document to suit your preferred order or sequence.",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/remove-pages",
+    to: "/organize-pdf",
   },
 };
 
 /**
- * please give me another 5 versions of this tool object please don't change the schema of the object, i.e don't change the object name nor it's property keys just translate the string values to ar, es, fr, hi, zh respectivly
  * the previous time when you translated the tool object you created 5 different objects with suffexes like _ar, however i don't want that.
  * just create 5 new objects with the same name edit_page and the same keys but with different string values for each language.
  * also each object created should be of type _edit_page.
  * i.e it should be somthing like this for all of the objects:
  * export const edit_page: _edit_page = {...}
+ * do this because all of the objects that you'll create should be of the edit_page type which is the following:
+ * type edit_page = {
+    edit_page_titles: {
+        organize_pdf: string;
+    };
+    loader_text: string;
+    add_more_button: string;
+    action_buttons: {
+        organize_pdf: string;
+    };
+    pages: string;
+    page: string;
+} all of them should satisfy this type please do it as i told you.
+ * 
  */
+
 export const edit_page = {
   edit_page_titles: {
-    remove_pages: "Remove Pages options",
+    organize_pdf: "Organize PDF options",
   },
   loader_text: "please wait...",
   add_more_button: "Add more files",
   action_buttons: {
-    remove_pages: "Remove Pages",
+    organize_pdf: "Organize PDF",
   },
   pages: "pages",
   page: "page",
-  // give me 5 verieties of this object with the same name i.e remove_pages_options but translate the string values to ar, es, fr, hi, zh respectively
-  remove_pages_options: {
-    info: "To delete pages from the document, click on them. You can also use the “shift” key to select multiple pages at once.",
-    total_pages: "Total pages",
-    pages_to_remove: "Pages to remove: ",
-    placeholder: "example: 2,8-32"
-  },
 };
 
 export const tools = {
@@ -46,7 +55,7 @@ export const tools = {
 
 /**
  * now give me 5 new objects of the same type as the downloadFile with the keys but translated in ar, es, fr, hi and zh respectively
- * and don't add prefexes like downloadFile_ar or somthing just create them all with the same name downloadFile and the same keys only translate the string values for each language.
+ * and don't add suffexes like _ar as in downloadFile_ar just create them all with the same name "downloadFile" and the same keys only translate the string values for each language.
  * just create 5 new objects with the same name downloadFile and the same keys but with different string values for each language.
  * also each object created should be of type _downloadFile.
  * i.e it should be somthing like this for all of the objects:
@@ -56,15 +65,15 @@ export const tools = {
 
 export const downloadFile = {
   titles: {
-    "remove-pages": ["Your pages have been successfully removed!"],
+    "organize-pdf": ["Your pages have been successfully organized!"],
   },
 
   btnText: {
-    "remove-pages": ["Download Modified PDF", "Download Modified files"],
+    "organize-pdf": ["Download Modified PDF", "Download Modified files"],
   },
 
   backto: {
-    "remove-pages": "Back To Remove Pages",
+    "organize-pdf": "Back To Organize PDF",
   },
 };
 
@@ -82,35 +91,8 @@ export const errors = {
     message: "The file is not a supported type.",
     types: {
       PDF: "Please choose a valid PDF file.",
-      JPG: "Please choose a valid JPEG image file.",
-      DOC: "Please choose a valid Word document file.",
-      DOCX: "Please choose a valid Word document file.",
-      XLS: "Please choose a valid Excel spreadsheet file.",
-      XLSX: "Please choose a valid Excel spreadsheet file.",
-      PPT: "Please choose a valid PowerPoint presentation file.",
-      PPTX: "Please choose a valid PowerPoint presentation file.",
     },
     code: "ERR_INVALID_FILE_TYPE",
-  },
-  FILE_CORRUPT: {
-    message:
-      "The file is corrupt and cannot be processed. Please choose a valid file.",
-    code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "The file contains missing fontsand cannot be processed. Please ensure all fonts are embedded in the PDF file.",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "The file contains invalid image data. Please ensure all images are properly formatted.",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "The file contains a security risk and cannot be processed. Please choose a valid file.",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -131,9 +113,5 @@ export const errors = {
     message:
       "A network error occurred. Please check your internet connection and try again.",
     code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "Please upload at least two files to merge.",
-    code: "ERR_UPLOAD_COUNT",
   },
 };

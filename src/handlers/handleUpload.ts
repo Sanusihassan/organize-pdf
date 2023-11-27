@@ -23,7 +23,7 @@ export const handleUpload = async (
   errors: _,
   filesLengthOnSubmit: number,
   setFilesLengthOnSubmit: (value: number) => void,
-  selectedPages: string
+  pageOrders: number[]
 ) => {
   e.preventDefault();
   dispatch(setIsSubmitted(true));
@@ -41,16 +41,14 @@ export const handleUpload = async (
     formData.append("files", files[i]);
   }
   // selected languages
-  formData.append("selectedPages", selectedPages);
+  formData.append("pageOrders", JSON.stringify(pageOrders));
   let url;
   // @ts-ignore
   if (process.env.NODE_ENV === "development") {
-    url = `https://5000-planetcreat-pdfequipsap-20rnq604504.ws-eu106.gitpod.io/api/${
-      state.path || "orc-pdf"
-    }`;
+    url = `https://5000-planetcreat-pdfequipsap-20rnq604504.ws-eu106.gitpod.io/api/${state.path}`;
     // url = `https://5000-planetcreat-pdfequipsap-te4zoi6qkr3.ws-eu102.gitpod.io/${state.path}`;
   } else {
-    url = `/api/${state.path || "orc-pdf"}`;
+    url = `/api/${state.path || "organize-pdf"}`;
   }
   if (state.errorMessage) {
     return;
