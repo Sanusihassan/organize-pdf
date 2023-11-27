@@ -87,7 +87,6 @@ const toolSlice = createSlice({
     setPageOrders(state: ToolState, action: PayloadAction<number[]>) {
       state.pageOrders = action.payload;
     },
-
   },
 });
 
@@ -106,7 +105,7 @@ export const {
   setShowOptions,
   setNavHeight,
   setPageCount,
-  setPageOrders
+  setPageOrders,
 } = toolSlice.actions;
 
 export default toolSlice.reducer;
