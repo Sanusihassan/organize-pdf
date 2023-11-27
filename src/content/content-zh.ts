@@ -21,15 +21,13 @@ export const tool: _tool = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "remove-pages": ["您的页面已成功删除！"],
+    "organize-pdf": ["您的页面已成功组织！"],
   },
-
   btnText: {
-    "remove-pages": ["下载修改后的PDF", "下载修改后的文件"],
+    "organize-pdf": ["下载修改后的PDF", "下载修改后的文件"],
   },
-
   backto: {
-    "remove-pages": "返回到删除页面",
+    "organize-pdf": "返回组织PDF",
   },
 };
 
@@ -67,31 +65,8 @@ export const errors: _errors = {
     message: "文件不是受支持的类型。",
     types: {
       PDF: "请选择一个有效的PDF文件。",
-      JPG: "请选择一个有效的JPEG图片文件。",
-      DOC: "请选择一个有效的Word文档文件。",
-      DOCX: "请选择一个有效的Word文档文件。",
-      XLS: "请选择一个有效的Excel电子表格文件。",
-      XLSX: "请选择一个有效的Excel电子表格文件。",
-      PPT: "请选择一个有效的PowerPoint演示文稿文件。",
-      PPTX: "请选择一个有效的PowerPoint演示文稿文件。",
     },
     code: "ERR_INVALID_FILE_TYPE",
-  },
-  FILE_CORRUPT: {
-    message: "文件已损坏，无法处理。请选择一个有效的文件。",
-    code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message: "文件缺少字体。请确保所有字体都嵌入在PDF文件中。",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message: "文件包含无效的图像数据。请确保所有图像格式正确。",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message: "文件存在安全风险，无法处理。请选择一个有效的文件。",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message: "您已超出允许的最大文件数。请删除一些文件并重试。",
@@ -108,9 +83,5 @@ export const errors: _errors = {
   ERR_NETWORK: {
     message: "网络错误，请检查您的互联网连接并重试。",
     code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "请至少上传两个文件以合并。",
-    code: "ERR_UPLOAD_COUNT",
   },
 };

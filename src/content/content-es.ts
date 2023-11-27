@@ -41,18 +41,16 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "remove-pages": ["¡Tus páginas se han eliminado con éxito!"],
+    "organize-pdf": ["Tus páginas se han organizado correctamente!"],
   },
-
   btnText: {
-    "remove-pages": [
+    "organize-pdf": [
       "Descargar PDF modificado",
       "Descargar archivos modificados",
     ],
   },
-
   backto: {
-    "remove-pages": "Volver a Eliminar páginas",
+    "organize-pdf": "Volver a Organizar PDF",
   },
 };
 
@@ -70,35 +68,8 @@ export const errors: _errors = {
     message: "El archivo no es un tipo compatible.",
     types: {
       PDF: "Por favor, elija un archivo PDF válido.",
-      JPG: "Por favor, elija un archivo de imagen JPEG válido.",
-      DOC: "Por favor, elija un archivo de documento de Word válido.",
-      DOCX: "Por favor, elija un archivo de documento de Word válido.",
-      XLS: "Por favor, elija un archivo de hoja de cálculo de Excel válido.",
-      XLSX: "Por favor, elija un archivo de hoja de cálculo de Excel válido.",
-      PPT: "Por favor, elija un archivo de presentación de PowerPoint válido.",
-      PPTX: "Por favor, elija un archivo de presentación de PowerPoint válido.",
     },
     code: "ERR_INVALID_FILE_TYPE",
-  },
-  FILE_CORRUPT: {
-    message:
-      "El archivo estácorrupto y no se puede procesar. Por favor, elija un archivo válido.",
-    code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "El archivo contiene fuentes faltantes. Por favor, asegúrese de que todas las fuentes estén incrustadas en el archivo PDF.",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "El archivo contiene datos de imagen no válidos. Por favor, asegúrese de que todas las imágenes estén correctamente formateadas.",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "El archivo contiene un riesgo de seguridad y no se puede procesar. Por favor, elija un archivo válido.",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -119,9 +90,5 @@ export const errors: _errors = {
     message:
       "Ha ocurrido un error en la red. Por favor, comprueba tu conexión a internet e inténtalo de nuevo.",
     code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "Por favor, suba al menos dos archivos para fusionar.",
-    code: "ERR_UPLOAD_COUNT",
   },
 };

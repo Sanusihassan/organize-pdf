@@ -55,7 +55,7 @@ export const tools = {
 
 /**
  * now give me 5 new objects of the same type as the downloadFile with the keys but translated in ar, es, fr, hi and zh respectively
- * and don't add prefexes like downloadFile_ar or somthing just create them all with the same name downloadFile and the same keys only translate the string values for each language.
+ * and don't add suffexes like _ar as in downloadFile_ar just create them all with the same name "downloadFile" and the same keys only translate the string values for each language.
  * just create 5 new objects with the same name downloadFile and the same keys but with different string values for each language.
  * also each object created should be of type _downloadFile.
  * i.e it should be somthing like this for all of the objects:
@@ -65,15 +65,15 @@ export const tools = {
 
 export const downloadFile = {
   titles: {
-    "remove-pages": ["Your pages have been successfully removed!"],
+    "organize-pdf": ["Your pages have been successfully organized!"],
   },
 
   btnText: {
-    "remove-pages": ["Download Modified PDF", "Download Modified files"],
+    "organize-pdf": ["Download Modified PDF", "Download Modified files"],
   },
 
   backto: {
-    "remove-pages": "Back To Remove Pages",
+    "organize-pdf": "Back To Organize PDF",
   },
 };
 
@@ -91,35 +91,8 @@ export const errors = {
     message: "The file is not a supported type.",
     types: {
       PDF: "Please choose a valid PDF file.",
-      JPG: "Please choose a valid JPEG image file.",
-      DOC: "Please choose a valid Word document file.",
-      DOCX: "Please choose a valid Word document file.",
-      XLS: "Please choose a valid Excel spreadsheet file.",
-      XLSX: "Please choose a valid Excel spreadsheet file.",
-      PPT: "Please choose a valid PowerPoint presentation file.",
-      PPTX: "Please choose a valid PowerPoint presentation file.",
     },
     code: "ERR_INVALID_FILE_TYPE",
-  },
-  FILE_CORRUPT: {
-    message:
-      "The file is corrupt and cannot be processed. Please choose a valid file.",
-    code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "The file contains missing fontsand cannot be processed. Please ensure all fonts are embedded in the PDF file.",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "The file contains invalid image data. Please ensure all images are properly formatted.",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "The file contains a security risk and cannot be processed. Please choose a valid file.",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -140,9 +113,5 @@ export const errors = {
     message:
       "A network error occurred. Please check your internet connection and try again.",
     code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "Please upload at least two files to merge.",
-    code: "ERR_UPLOAD_COUNT",
   },
 };

@@ -28,15 +28,13 @@ export const tools: _tools = {
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "remove-pages": ["تمت إزالة صفحاتك بنجاح!"],
+    "organize-pdf": ["تم تنظيم صفحاتك بنجاح!"],
   },
-
   btnText: {
-    "remove-pages": ["تحميل ملف PDF المعدّل", "تحميل الملفات المعدّلة"],
+    "organize-pdf": ["تحميل ملف PDF المعدّل", "تحميل الملفات المعدّلة"],
   },
-
   backto: {
-    "remove-pages": "العودة إلى إزالة الصفحات",
+    "organize-pdf": "العودة إلى تنظيم PDF",
   },
 };
 
@@ -53,7 +51,6 @@ export const edit_page: _edit_page = {
   page: "صفحة",
 };
 
-
 export const errors: _errors = {
   EMPTY_FILE: {
     message: "الملف فارغ. يرجى اختيار ملف صالح.",
@@ -68,34 +65,8 @@ export const errors: _errors = {
     message: "الملف غير مدعوم.",
     types: {
       PDF: "يرجى اختيار ملف PDF صالح.",
-      JPG: "يرجى اختيار ملف صورة JPEG صالح.",
-      DOC: "يرجى اختيار ملف مستند Word صالح.",
-      DOCX: "يرجى اختيار ملف مستند Word صالح.",
-      XLS: "يرجى اختيار ملف جدول بيانات Excel صالح.",
-      XLSX: "يرجى اختيارملف جدول بيانات Excel صالح.",
-      PPT: "يرجى اختيار ملف عرض تقديمي PowerPoint صالح.",
-      PPTX: "يرجى اختيار ملف عرض تقديمي PowerPoint صالح.",
     },
     code: "ERR_INVALID_FILE_TYPE",
-  },
-  FILE_CORRUPT: {
-    message: "الملف تالف ولا يمكن معالجته. يرجى اختيار ملف صالح.",
-    code: "ERR_FILE_CORRUPT",
-  },
-  MISSING_FONTS: {
-    message:
-      "الملف يحتوي على خطوط أحرف مفقودة. يرجى التأكد من تضمين جميع الخطوط في ملف PDF.",
-    code: "ERR_MISSING_FONTS",
-  },
-  INVALID_IMAGE_DATA: {
-    message:
-      "الملف يحتوي على بيانات صورة غير صالحة. يرجى التأكد من تنسيق جميع الصور بشكل صحيح.",
-    code: "ERR_INVALID_IMAGE_DATA",
-  },
-  SECURITY_RISK: {
-    message:
-      "الملف يحتوي على مخاطر أمان ولا يمكن معالجته. يرجى اختيار ملف صالح.",
-    code: "ERR_SECURITY_RISK",
   },
   MAX_FILES_EXCEEDED: {
     message:
@@ -115,9 +86,5 @@ export const errors: _errors = {
     message:
       "حدث خطأ في الشبكة. يرجى التحقق من اتصالك بالإنترنت وحاول مرة أخرى.",
     code: "ERR_NETWORK",
-  },
-  ERR_UPLOAD_COUNT: {
-    message: "يرجى رفع ملفين على الأقل للدمج.",
-    code: "ERR_UPLOAD_COUNT",
   },
 };
