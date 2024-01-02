@@ -72,7 +72,7 @@ export default ({ item }: { item: data_type }) => {
           href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         />
       </Head>
-      <NavBar path="/organize-pdf" lang="" />
+      <NavBar path="organize-pdf" lang="" />
       <Tool
         tools={tools}
         data={item}

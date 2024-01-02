@@ -67,7 +67,7 @@ export default ({ item, lang }: { item: data_type; lang: string }) => {
         <meta name="description" content={item.description} />
         <link rel="icon" href="/logo.png" />
       </Head>
-      <NavBar path="/organize-pdf" lang={lang} />
+      <NavBar path="organize-pdf" lang={lang} />
       <Tool
         tools={tools}
         data={item}
