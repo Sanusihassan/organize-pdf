@@ -10,7 +10,28 @@ import {
   setShowDownloadBtn,
 } from "../store";
 
-// this is the handleUpload function that is calling the download function maybe the issue is here
+let prevState: {
+  pageOrders: number[];
+} = {
+  pageOrders: [],
+};
+
+function comparePageOrders(
+  prevStatePageOrders: number[],
+  currentPageOrders: number[]
+): boolean {
+  if (prevStatePageOrders.length !== currentPageOrders.length) {
+    return false;
+  }
+
+  // Using every() to compare each element in both arrays
+  const areEqual = prevStatePageOrders.every(
+    (value, index) => value === currentPageOrders[index]
+  );
+
+  return areEqual;
+}
+
 export const handleUpload = async (
   e: React.FormEvent<HTMLFormElement>,
   downloadBtn: RefObject<HTMLAnchorElement>,
@@ -21,16 +42,27 @@ export const handleUpload = async (
   },
   files: File[],
   errors: _,
-  filesLengthOnSubmit: number,
-  setFilesLengthOnSubmit: (value: number) => void,
+  filesOnSubmit: string[],
+  setFilesOnSubmit: (value: string[]) => void,
   pageOrders: number[]
 ) => {
   e.preventDefault();
   dispatch(setIsSubmitted(true));
 
   if (!files) return;
-  // subscribe to the files state and get the previous files
-  if (filesLengthOnSubmit == files.length) {
+  // Extract file names from the File[] array
+  const fileNames = files.map((file) => file.name);
+
+  // Check if every file name in files is present in filesOnSubmit
+  const allFilesPresent = fileNames.every((fileName) =>
+    filesOnSubmit.includes(fileName)
+  );
+
+  if (
+    allFilesPresent &&
+    files.length === filesOnSubmit.length &&
+    comparePageOrders(prevState.pageOrders, pageOrders)
+  ) {
     dispatch(setShowDownloadBtn(true));
     dispatch(resetErrorMessage());
     return;
@@ -45,8 +77,7 @@ export const handleUpload = async (
   let url;
   // @ts-ignore
   if (process.env.NODE_ENV === "development") {
-    url = `https://5000-planetcreat-pdfequipsap-20rnq604504.ws-eu106.gitpod.io/api/${state.path}`;
-    // url = `https://5000-planetcreat-pdfequipsap-te4zoi6qkr3.ws-eu102.gitpod.io/${state.path}`;
+    url = `https://8000-sanusihassa-pdfequipsap-4s5c76gda53.ws-eu107.gitpod.io/api/${state.path}`;
   } else {
     url = `/api/${state.path || "organize-pdf"}`;
   }
@@ -88,7 +119,8 @@ export const handleUpload = async (
       outputFileName,
       downloadBtn
     );
-    setFilesLengthOnSubmit(files.length);
+    setFilesOnSubmit(files.map((f) => f.name));
+    prevState = { pageOrders };
 
     if (response.status !== 200) {
       throw new Error(`HTTP error! status: ${response.status}`);

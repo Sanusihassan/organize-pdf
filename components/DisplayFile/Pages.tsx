@@ -19,7 +19,6 @@ export const Pages = ({ handleOnDragEnd, imageUrls, loader_text }: props) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setPageOrders(imageUrls.map((item) => item.id)));
-    console.log(imageUrls);
   }, [imageUrls]);
   return (
     <div>
