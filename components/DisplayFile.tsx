@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "react-tooltip/dist/react-tooltip.css";
 import { useRouter } from "next/router";
+import type { tool as _tool } from "../../content";
 import { validateFiles } from "../src/utils";
 import type { errors as _, edit_page } from "../content";
 import Files from "./DisplayFile/Files";

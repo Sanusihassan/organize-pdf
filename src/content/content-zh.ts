@@ -11,8 +11,9 @@ import type {
 
 export const tool: _tool = {
   Organize_PDF: {
-    title: "整理 PDF",
-    description: "轻松重新排列 PDF 文档中的页面，以符合您的首选顺序或顺序。",
+    title: "组织 PDF",
+    seoTitle: "在线 PDF 页面组织 - 排序 PDF 页面 | PDFEquips",
+    description: "轻松重新排列 PDF 文档中的页面，以适应您的首选顺序或序列。",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",

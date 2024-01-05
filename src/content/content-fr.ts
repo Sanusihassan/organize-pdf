@@ -12,8 +12,10 @@ import type {
 export const tool: _tool = {
   Organize_PDF: {
     title: "Organiser PDF",
+    seoTitle:
+      "Organiser des PDF en ligne - Séquencer des pages PDF | PDFEquips",
     description:
-      "Réorganisez facilement les pages de votre document PDF selon votre ordre ou séquence préférés.",
+      "Réorganisez facilement les pages de votre document PDF pour correspondre à votre ordre ou séquence préférés.",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",

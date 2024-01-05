@@ -9,6 +9,7 @@ import { useFileStore } from "../../src/file-store";
 // types
 import type { tools } from "../../content";
 import { useRouter } from "next/router";
+import type { tool as _tool } from "../../content";
 import { validateFiles } from "../../src/utils";
 type AcceptedFileTypes = {
   [key in ".pdf" | ".pptx" | ".docx" | ".xlsx" | ".jpg" | ".html"]: string;

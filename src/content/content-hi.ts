@@ -11,9 +11,10 @@ import type {
 
 export const tool: _tool = {
   Organize_PDF: {
-    title: "पीडीएफ संगठित करें",
+    title: "PDF संगठित करें",
+    seoTitle: "ऑनलाइन PDF संगठन उपकरण - PDF पेज़ क्रमबद्ध करें | PDFEquips",
     description:
-      "अपने पसंदीदा क्रम या क्रम के अनुसार अपने पीडीएफ दस्तावेज़ की पृष्ठों को आसानी से व्यवस्थित करें।",
+      "अपने पसंदीदा क्रम या क्रम के लिए अपने PDF दस्तावेज़ के पेज़ को आसानी से व्यवस्थित करें।",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",

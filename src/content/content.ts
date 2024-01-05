@@ -1,8 +1,8 @@
 // i.e rearange pdf
 export const tool = {
-  // now please give me 5 verisons of this object with the same object name i.e Organize_PDF and the same keys but only change or translate the string values to ar, es, fr, hi and zh respectively
   Organize_PDF: {
     title: "Organize PDF",
+    seoTitle: "Online PDF Page Organizer - Rearrange PDF Pages | PDFEquips",
     description:
       "Effortlessly rearrange the pages in your PDF document to suit your preferred order or sequence.",
     color: "#6c5ce7",

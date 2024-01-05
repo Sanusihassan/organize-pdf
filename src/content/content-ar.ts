@@ -10,9 +10,10 @@ import type {
 
 export const tool: _tool = {
   Organize_PDF: {
-    title: "تنظيم ملف PDF",
+    title: "تنظيم PDF",
+    seoTitle: "تنظيم ملفات PDF عبر الإنترنت - ترتيب صفحات PDF | PDFEquips",
     description:
-      "إعادة ترتيب صفحات مستند PDF بسهولة لتناسب الترتيب أو التسلسل المفضل لديك.",
+      "إعادة ترتيب الصفحات في ملف PDF بسهولة لتناسب الترتيب أو التسلسل المفضل لديك.",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",
