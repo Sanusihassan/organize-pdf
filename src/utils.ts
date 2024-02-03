@@ -89,9 +89,8 @@ export const getFileDetailsTooltipContent = async (
         const pdf = await getDocument(url).promise;
 
         const pageCount = pdf.numPages || 0;
-        tooltipContent += ` - ${
-          lang === "ar" && pageCount === 1 ? "" : pageCount + " "
-        }${pageCount > 1 ? pages : page}`;
+        tooltipContent += ` - ${lang === "ar" && pageCount === 1 ? "" : pageCount + " "
+          }${pageCount > 1 ? pages : page}`;
         URL.revokeObjectURL(url);
         if (!file.size) {
           emptyPDFHandler(dispatch, errors);
@@ -146,7 +145,7 @@ export async function getFirstPageAsImage(
 
       return canvas.toDataURL();
     } catch (error) {
-      dispatch(setErrorMessage(errors.FILE_CORRUPT.message));
+      // dispatch(setErrorMessage(errors.FILE_CORRUPT.message));
 
       return DEFAULT_PDF_IMAGE; // Return the placeholder image URL when an error occurs
     }
@@ -200,12 +199,6 @@ export const validateFiles = (
     "application/vnd.ms-powerpoint",
     "application/vnd.ms-excel",
   ];
-  // validation for merge-pdf page & empty files
-  if (state.path == "merge-pdf" && files.length <= 1) {
-    dispatch(setErrorMessage(errors.ERR_UPLOAD_COUNT.message));
-    dispatch(setErrorCode("ERR_UPLOAD_COUNT"));
-    return false;
-  }
   if (files.length == 0 && (state.click || state.focus)) {
     dispatch(setErrorMessage(errors.NO_FILES_SELECTED.message));
     dispatch(setErrorCode("ERR_NO_FILES_SELECTED"));
@@ -232,7 +225,7 @@ export const validateFiles = (
 
     if (!file || !file.name) {
       // handle FILE_CORRUPT error
-      dispatch(setErrorMessage(errors.FILE_CORRUPT.message));
+      // dispatch(setErrorMessage(errors.FILE_CORRUPT.message));
       return false;
     } else if (!file.type) {
       // handle NOT_SUPPORTED_TYPE error
@@ -244,7 +237,7 @@ export const validateFiles = (
     ) {
       const errorMessage =
         errors.NOT_SUPPORTED_TYPE.types[
-          extension as keyof typeof errors.NOT_SUPPORTED_TYPE.types
+        extension as keyof typeof errors.NOT_SUPPORTED_TYPE.types
         ] || errors.NOT_SUPPORTED_TYPE.message;
       dispatch(setErrorMessage(errorMessage));
       return false;
@@ -258,19 +251,6 @@ export const validateFiles = (
       dispatch(setErrorMessage(errors.EMPTY_FILE.message));
       dispatch(setErrorCode("ERR_EMPTY_FILE"));
       return false;
-    } else if (file.type.startsWith("image/")) {
-      // handle INVALID_IMAGE_DATA error
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      reader.onload = () => {
-        const img = new Image();
-        img.src = reader.result as string;
-        img.onerror = () => {
-          dispatch(setErrorMessage(errors.INVALID_IMAGE_DATA.message));
-          return false;
-        };
-      };
-      return true;
     }
   }
   return true;
@@ -331,7 +311,7 @@ export async function getNthPageAsImage(
 
       return canvas.toDataURL();
     } catch (error) {
-      dispatch(setErrorMessage(errors.FILE_CORRUPT.message));
+      // dispatch(setErrorMessage(errors.FILE_CORRUPT.message));
 
       return DEFAULT_PDF_IMAGE; // Return the placeholder image URL when an error occurs
     }

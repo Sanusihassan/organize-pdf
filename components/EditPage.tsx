@@ -1,5 +1,4 @@
 import { useRouter } from "next/router";
-import type { tool as _tool } from "../../content";
 import DisplayFile from "./DisplayFile";
 import {
   Dispatch,
@@ -123,12 +122,12 @@ const EditPage = ({
           style={
             showOptions
               ? {
-                  top:
-                    navHeight +
-                    (gearRef.current
-                      ? (gearRef.current as HTMLElement).clientHeight
-                      : 0),
-                }
+                top:
+                  navHeight +
+                  (gearRef.current
+                    ? (gearRef.current as HTMLElement).clientHeight
+                    : 0),
+              }
               : {}
           }
         >
@@ -140,8 +139,8 @@ const EditPage = ({
         style={
           showOptions
             ? {
-                top: navHeight,
-              }
+              top: navHeight,
+            }
             : {}
         }
       >
@@ -149,7 +148,7 @@ const EditPage = ({
           <bdi>
             {
               edit_page.edit_page_titles[
-                k.replace(/-/g, "_") as keyof typeof edit_page.edit_page_titles
+              k.replace(/-/g, "_") as keyof typeof edit_page.edit_page_titles
               ]
             }
           </bdi>
