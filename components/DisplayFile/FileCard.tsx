@@ -9,7 +9,7 @@ import {
   getPlaceHoderImageUrl,
 } from "../../src/utils";
 import { useDispatch, useSelector } from "react-redux";
-import { ToolState, setPageCount } from "@/src/store";
+import { ToolState, setField } from "@/src/store";
 import { Pages } from "./Pages";
 type OmitFileName<T extends ActionProps> = Omit<T, "fileName" | "index">;
 
@@ -64,7 +64,7 @@ const FileCard = ({
   useEffect(() => {
     (async () => {
       let _pageCount = await calculatePages(file);
-      dispatch(setPageCount(_pageCount));
+      dispatch(setField({ pageCount: _pageCount }));
     })();
     processFile();
     return () => {

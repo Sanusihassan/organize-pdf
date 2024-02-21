@@ -1,7 +1,7 @@
 import { useCallback, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import EditPage from "./EditPage";
-import { ToolState, hideTool, setPath, setShowDownloadBtn } from "../src/store";
+import { ToolState, setField } from "../src/store";
 
 import { useRouter } from "next/router";
 import type { edit_page, tools, downloadFile } from "../content";
@@ -52,9 +52,6 @@ const Tool: React.FC<ToolProps> = ({
   downloadFile,
 }) => {
   // state variables:
-  const statePath = useSelector(
-    (state: { tool: ToolState }) => state.tool.path
-  );
   const stateShowTool = useSelector(
     (state: { tool: ToolState }) => state.tool.showTool
   );
@@ -64,18 +61,12 @@ const Tool: React.FC<ToolProps> = ({
   // the files:
   const { setFiles } = useFileStore();
   const dispatch = useDispatch();
-  // const dispatch = useDispatch();
-  const router = useRouter();
+  let path = data.to.replace("/", "");
   const handleHideTool = () => {
-    dispatch(dispatch(hideTool()));
+    dispatch(dispatch(setField({ showTool: false })));
   };
-  let path = router.asPath.replace(/^\/[a-z]{2}\//, "").replace(/^\//, "");
   useEffect(() => {
-    // set the path if it has not been set yet
-    if (statePath == "") {
-      dispatch(setPath(path));
-    }
-    dispatch(setShowDownloadBtn(false));
+    dispatch(setField({ showDownloadBtn: false }));
   }, []);
 
   // endpoint
@@ -139,8 +130,9 @@ const Tool: React.FC<ToolProps> = ({
           page={page}
           lang={lang}
           errors={errors}
+          path={path}
         />
-        <DownloadFile lang={lang} downloadFile={downloadFile} />
+        <DownloadFile lang={lang} downloadFile={downloadFile} path={path} />
         {/* )} */}
       </div>
     </>

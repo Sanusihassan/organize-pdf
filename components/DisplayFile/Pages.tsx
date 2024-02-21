@@ -7,7 +7,7 @@ import {
 import ImageWithLoader from "./ImageWithLoader";
 import { imageUrlsType } from "./FileCard";
 import { useEffect } from "react";
-import { setPageOrders } from "@/src/store";
+import { setField } from "@/src/store";
 import { useDispatch } from "react-redux";
 
 type props = {
@@ -18,7 +18,7 @@ type props = {
 export const Pages = ({ handleOnDragEnd, imageUrls, loader_text }: props) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setPageOrders(imageUrls.map((item) => item.id)));
+    dispatch(setField({ pageOrders: imageUrls.map((item) => item.id) }));
   }, [imageUrls]);
   return (
     <div>
