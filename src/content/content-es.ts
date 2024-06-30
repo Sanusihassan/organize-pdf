@@ -12,14 +12,29 @@ import type {
 export const tool: _tool = {
   Organize_PDF: {
     title: "Organizar PDF",
-    seoTitle: "Organizar PDF en línea - Ordenar páginas PDF | PDFEquips",
-    description:
-      "Reorganiza fácilmente las páginas en tu documento PDF para ajustarse a tu orden o secuencia preferida.",
+    seoTitle: "Reorganizar Páginas en Línea - Herramienta de Organizador de PDF",
+    description: "Reorganiza fácilmente las páginas de tu documento PDF para adaptarlas a tu orden o secuencia preferida.",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",
+    keywords: "reorganizar páginas PDF, organizador de PDF, organizar PDF en línea, reordenar páginas PDF, organizador de páginas PDF en línea",
+    features: [
+      {
+        title: "Arrastrar y Soltar Simple",
+        description: "Reorganiza fácilmente las páginas utilizando una interfaz simple de arrastrar y soltar."
+      },
+      {
+        title: "Previsualizar Antes de Guardar",
+        description: "Previsualiza tus cambios antes de finalizar el nuevo orden de las páginas."
+      },
+      {
+        title: "Seguro y Privado",
+        description: "Asegura la privacidad y seguridad de tu documento mientras reorganizas las páginas."
+      }
+    ]
   },
 };
+
 export const edit_page: _edit_page = {
   edit_page_titles: {
     organize_pdf: "Opciones para organizar PDF",
@@ -53,6 +68,13 @@ export const downloadFile: _downloadFile = {
   backto: {
     "organize-pdf": "Volver a Organizar PDF",
   },
+};
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "términos",
+  conditions: "condiciones",
+  privacy_policy: "política de privacidad",
 };
 
 export const errors: _errors = {

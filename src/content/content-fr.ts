@@ -12,15 +12,29 @@ import type {
 export const tool: _tool = {
   Organize_PDF: {
     title: "Organiser PDF",
-    seoTitle:
-      "Organiser des PDF en ligne - Séquencer des pages PDF | PDFEquips",
-    description:
-      "Réorganisez facilement les pages de votre document PDF pour correspondre à votre ordre ou séquence préférés.",
+    seoTitle: "Réorganiser les Pages en Ligne - Outil d'Organisateur PDF",
+    description: "Réorganisez facilement les pages de votre document PDF selon l'ordre ou la séquence de votre choix.",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",
+    keywords: "réorganiser les pages PDF, organisateur PDF, organiser PDF en ligne, réorganiser les pages PDF, arrangeur de pages PDF en ligne",
+    features: [
+      {
+        title: "Glisser-Déposer Simple",
+        description: "Réorganisez facilement les pages en utilisant une interface simple de glisser-déposer."
+      },
+      {
+        title: "Aperçu Avant Enregistrement",
+        description: "Prévisualisez vos modifications avant de finaliser le nouvel ordre des pages."
+      },
+      {
+        title: "Sécurisé et Privé",
+        description: "Assurez la confidentialité et la sécurité de votre document lors de la réorganisation des pages."
+      }
+    ]
   },
 };
+
 
 export const tools: _tools = {
   select: "Sélectionner",
@@ -56,6 +70,14 @@ export const edit_page: _edit_page = {
   pages: "pages",
   page: "page",
 };
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "conditions",
+  conditions: "conditions d'utilisation",
+  privacy_policy: "politique de confidentialité",
+};
+
 
 export const errors: _errors = {
   EMPTY_FILE: {

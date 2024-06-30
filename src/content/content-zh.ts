@@ -11,14 +11,30 @@ import type {
 
 export const tool: _tool = {
   Organize_PDF: {
-    title: "组织 PDF",
-    seoTitle: "在线 PDF 页面组织 - 排序 PDF 页面 | PDFEquips",
-    description: "轻松重新排列 PDF 文档中的页面，以适应您的首选顺序或序列。",
+    title: "整理 PDF",
+    seoTitle: "在线重新排列页面 - PDF 整理工具",
+    description: "轻松重新排列 PDF 文档中的页面，以符合您喜欢的顺序或顺序。",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",
+    keywords: "重新排列 PDF 页面, PDF 整理工具, 在线整理 PDF, 重新排序 PDF 页面,在线 PDF 页面排列工具",
+    features: [
+      {
+        title: "简单的拖放",
+        description: "使用简单的拖放界面轻松重新排列页面。"
+      },
+      {
+        title: "保存前预览",
+        description: "在最终确定新页面顺序之前预览更改。"
+      },
+      {
+        title: "安全和私密",
+        description: "在重新排列页面时确保文档的隐私和安全。"
+      }
+    ]
   },
 };
+
 
 export const downloadFile: _downloadFile = {
   titles: {
@@ -50,6 +66,13 @@ export const tools: _tools = {
   or_drop: "或将文件拖放到此处",
   files: "文件",
   drop_files: "在此处拖放文件",
+};
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "条款",
+  conditions: "条件",
+  privacy_policy: "隐私政策",
 };
 
 export const errors: _errors = {

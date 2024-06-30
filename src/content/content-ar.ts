@@ -11,14 +11,29 @@ import type {
 export const tool: _tool = {
   Organize_PDF: {
     title: "تنظيم PDF",
-    seoTitle: "تنظيم ملفات PDF عبر الإنترنت - ترتيب صفحات PDF | PDFEquips",
-    description:
-      "إعادة ترتيب الصفحات في ملف PDF بسهولة لتناسب الترتيب أو التسلسل المفضل لديك.",
+    seoTitle: "إعادة ترتيب الصفحات عبر الإنترنت - أداة تنظيم PDF",
+    description: "إعادة ترتيب صفحات مستند PDF بسهولة لتناسب ترتيبك أو تسلسلك المفضل.",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",
+    keywords: "إعادة ترتيب صفحات PDF, منظم PDF, تنظيم PDF عبر الإنترنت, إعادة ترتيب صفحات PDF, مُرتب صفحات PDF عبر الإنترنت",
+    features: [
+      {
+        title: "سحب وإفلات بسيط",
+        description: "إعادة ترتيب الصفحات بسهولة باستخدام واجهة سحب وإفلات بسيطة."
+      },
+      {
+        title: "معاينة قبل الحفظ",
+        description: "معاينة تغييراتك قبل إتمام الترتيب الجديد للصفحات."
+      },
+      {
+        title: "آمن وخاص",
+        description: "ضمان خصوصية وأمان المستند أثناء إعادة ترتيب الصفحات."
+      }
+    ]
   },
 };
+
 
 export const tools: _tools = {
   select: "اختر",
@@ -50,6 +65,14 @@ export const edit_page: _edit_page = {
   },
   pages: "صفحات",
   page: "صفحة",
+};
+
+
+export const footer: _footer = {
+  brand: "PDFEquips",
+  terms: "الشروط",
+  conditions: "والأحكام",
+  privacy_policy: "سياسة الخصوصية",
 };
 
 export const errors: _errors = {

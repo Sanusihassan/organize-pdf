@@ -1,15 +1,29 @@
-// i.e rearange pdf
 export const tool = {
   Organize_PDF: {
     title: "Organize PDF",
-    seoTitle: "Online PDF Page Organizer - Rearrange PDF Pages | PDFEquips",
-    description:
-      "Effortlessly rearrange the pages in your PDF document to suit your preferred order or sequence.",
+    seoTitle: "Rearrange Pages Online - PDF Organizer Tool",
+    description: "Effortlessly rearrange the pages in your PDF document to suit your preferred order or sequence.",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",
+    keywords: "rearrange PDF pages, PDF organizer, organize PDF online, reorder PDF pages, online PDF page arranger",
+    features: [
+      {
+        title: "Simple Drag-and-Drop",
+        description: "Easily rearrange pages using a simple drag-and-drop interface."
+      },
+      {
+        title: "Preview Before Saving",
+        description: "Preview your changes before finalizing the new order of pages."
+      },
+      {
+        title: "Secure and Private",
+        description: "Ensure your document's privacy and security while rearranging pages."
+      }
+    ]
   },
 };
+
 
 /**
  * the previous time when you translated the tool object you created 5 different objects with suffexes like _ar, however i don't want that.
@@ -76,6 +90,13 @@ export const downloadFile = {
     "organize-pdf": "Back To Organize PDF",
   },
 };
+
+export const footer = {
+  brand: "PDFEquips",
+  terms: "terms",
+  conditions: "conditions",
+  privacy_policy: "privacy policy",
+}
 
 export const errors = {
   EMPTY_FILE: {
