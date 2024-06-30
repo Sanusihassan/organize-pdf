@@ -23,7 +23,11 @@
         .feature-icon {
             width: 3em;
             height: 3em;
-            fill: currentColor;
+
+            &:not(.no-fill) {
+                fill: currentColor;
+            }
+
             color: currentColor
         }
 

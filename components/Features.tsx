@@ -17,7 +17,7 @@ export const Features = ({ features }: {
                 const Icon = icons[i];
                 return (
                     <div className="feature">
-                        <Icon className="feature-icon" />
+                        <Icon className={`feature-icon${i === 0 ? " no-fill" : ""}`} />
                         <div className="title">{title}</div>
                         <p className="description">{description}</p>
                     </div>
