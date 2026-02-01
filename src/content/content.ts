@@ -1,49 +1,75 @@
 export const tool = {
-  Lock_PDF: {
-    title: "Lock PDF",
-    seoTitle: "Password Protect PDF - Secure Your PDF File Online",
-    description: "Secure your PDF file with a password to prevent unauthorized access.",
-    keywords: "password protect PDF, secure PDF file, lock PDF online, encrypt PDF, protect PDF document, PDF security tool",
-    color: "#2980b9",
+  Rotate_PDF: {
+    title: "Rotate PDF",
+    seoTitle: "Rotate PDF Pages Online - Easy PDF Page Rotation",
+    description: "Easily rotate pages within your PDF documents to achieve optimal orientation.",
+    keywords: "rotate PDF, PDF page rotation, rotate PDF online, adjust PDF orientation, rotate pages in PDF",
+    color: "#10ac84",
     type: ".pdf",
-    to: "/lock-pdf",
+    to: "/rotate-pdf",
     features: [
       {
-        title: "Easy to Use",
-        description: "Quickly lock your PDF files with a simple interface."
+        title: "Simple Page Rotation",
+        description: "Easily rotate PDF pages to the desired orientation with just a few clicks."
       },
       {
-        title: "Strong Encryption",
-        description: "Apply strong password encryption to safeguard your documents."
+        title: "Batch Rotation",
+        description: "Rotate multiple pages at once for efficient document adjustments."
       },
       {
-        title: "Privacy Ensured",
-        description: "Your files are encrypted and deleted from our servers after processing."
+        title: "Secure and Private",
+        description: "Your files are processed securely and are deleted shortly after processing."
       }
+    ]
+  }
+};
+
+export const edit_page = {
+  edit_page_titles: {
+    rotate_pdf: "Rotate PDF options"
+  },
+  loader_text: "please wait...",
+  add_more_button: "Add more files",
+  action_buttons: {
+    rotate_pdf: "Rotate PDF"
+  },
+  pages: "pages",
+  page: "page",
+  rotate_pdf_options: {
+    info1: "Hover over the PDF file to reveal a",
+    info2: "icon. Click on the icon to rotate your PDFs. Alternatively, you can use the buttons below to rotate the PDF file left or right",
+    left: "Left",
+    right: "Right",
+    rotation: "Rotation",
+    reset_all: "Reset All"
+  },
+  filenameOptions: {
+    label: "Output File Name (Optional)",
+    placeholder: "Enter file name",
+    helperText: "This will be the name of the compressed PDF when downloaded.",
+    cta: "View Plans",
+    upgradeNotice: {
+      msg: "Levels from 2.0 to 10.0 are available with premium.",
+      cta: "Upgrade now",
+    },
+  },
+};
+
+export const downloadFile = {
+  titles: {
+    "rotate-pdf": [
+      "PDF files have been rotated!",
+      "PDF file has been rotated!"
     ]
   },
-  Unlock_PDF: {
-    title: "Unlock PDF",
-    seoTitle: "Remove PDF Password - Unlock Your PDF File Online",
-    description: "Easily remove password protection from your PDF file with our user-friendly tool.",
-    keywords: "remove PDF password, unlock PDF online, decrypt PDF, access secured PDF, PDF password remover, unlock PDF document",
-    color: "#3498db",
-    type: ".pdf",
-    to: "/unlock-pdf",
-    features: [
-      {
-        title: "User-Friendly",
-        description: "Easily unlock PDF files with a straightforward process."
-      },
-      {
-        title: "Quick Decryption",
-        description: "Remove PDF passwords quickly and efficiently."
-      },
-      {
-        title: "Secure Processing",
-        description: "Your files are handled securely and removed from our servers after unlocking."
-      }
+  btnText: {
+    "rotate-pdf": [
+      "Download Rotated PDF files",
+      "Download Rotated PDF file"
     ]
+  },
+  backto: {
+    "rotate-pdf": "Back To Rotate PDF"
   }
 };
 export type ToolType = {
@@ -59,75 +85,7 @@ export type ToolType = {
     description: string;
   }[];
 }
-export type Paths = "lock-pdf" | "unlock-pdf";
-export const edit_page = {
-  edit_page_titles: {
-    lock_pdf: "Lock PDF & Protect PDF",
-    unlock_pdf: "Unlock PDF"
-  },
-  loader_text: "please wait...",
-  add_more_button: "Add more files",
-  action_buttons: {
-    lock_pdf: "Lock PDF",
-    unlock_pdf: "Unlock PDF"
-  },
-  lock_button_title: "Please confirm the password by entering it twice.",
-  unlock_button_title: "Enter the password for each protected file",
-  pages: "pages",
-  page: "page",
-  lock_pdf: {
-    title: "Set a password to lock your PDF file",
-    password: "Password",
-    repeatPassword: "Repeat password",
-    no_match: "The passwords do not match."
-  },
-  unlock_pdf: {
-    title: "Enter the password for files that require it",
-    password_for: "Password for"
-  },
-  filenameOptions: {
-    label: "Output File Name (Optional)",
-    placeholder: "Enter file name",
-    helperText: "This will be the name of the compressed PDF when downloaded.",
-    cta: "View Plans",
-    upgradeNotice: {
-      msg: "Levels from 2.0 to 10.0 are available with premium.",
-      cta: "Upgrade now",
-    },
-  },
-  languageSelectContent: {
-    placeholder: "Choose languages (maximum 3)",
-    warning: "This document is scanned. Please select its language to ensure accurate results.",
-    ocr_warning: "Scanned document detected. For best results, use our OCR PDF tool with advanced language detection and higher accuracy. You can also set the language here for basic processing.",
-  },
-};
-
-export const downloadFile = {
-  titles: {
-    "lock-pdf": [
-      "PDF files have been locked!",
-      "PDF file has been locked!"
-    ],
-    "unlock-pdf": [
-      "PDF files have been unlocked!",
-      "PDF file has been unlocked!"
-    ]
-  },
-  btnText: {
-    "lock-pdf": [
-      "Download Locked PDF files",
-      "Download Locked PDF file"
-    ],
-    "unlock-pdf": [
-      "Download unlocked PDF files",
-      "Download unlocked PDF file"
-    ]
-  },
-  backto: {
-    "lock-pdf": "Back To Lock PDF",
-    "unlock-pdf": "Back To Unlock PDF"
-  }
-};
+export type Paths = "rotate-pdf";
 
 export const tools = {
   select: "Select",

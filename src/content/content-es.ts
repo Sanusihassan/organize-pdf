@@ -2,49 +2,26 @@ import type { edit_page as _edit_page, tool as _tool, tools as _tools, downloadF
 import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
-  Lock_PDF: {
-    title: "Bloquear PDF",
-    seoTitle: "Proteger PDF con Contraseña - Asegura tu Archivo PDF en Línea",
-    description: "Protege tu archivo PDF con una contraseña para prevenir el acceso no autorizado.",
-    keywords: "proteger PDF con contraseña, asegurar archivo PDF, bloquear PDF en línea, cifrar PDF, proteger documento PDF, herramienta de seguridad PDF",
-    color: "#2980b9",
+  Rotate_PDF: {
+    title: "Rotar PDF",
+    seoTitle: "Rotar Páginas PDF en Línea - Fácil Rotación de PDF",
+    description: "Gira fácilmente las páginas de tus documentos PDF para lograr la orientación óptima.",
+    keywords: "rotar PDF, rotación de páginas PDF, rotar PDF en línea, ajustar orientación de PDF, rotar páginas en PDF",
+    color: "#10ac84",
     type: ".pdf",
-    to: "/lock-pdf",
+    to: "/rotate-pdf",
     features: [
       {
-        title: "Fácil de Usar",
-        description: "Bloquea rápidamente tus archivos PDF con una interfaz simple."
+        title: "Rotación de Páginas Simple",
+        description: "Gira fácilmente las páginas de PDF a la orientación deseada con solo unos pocos clics."
       },
       {
-        title: "Cifrado Fuerte",
-        description: "Aplica un cifrado fuerte con contraseña para proteger tus documentos."
+        title: "Rotación en Lote",
+        description: "Gira múltiples páginas a la vez para ajustes eficientes de documentos."
       },
       {
-        title: "Privacidad Garantizada",
-        description: "Tus archivos son cifrados y eliminados de nuestros servidores después del procesamiento."
-      }
-    ]
-  },
-  Unlock_PDF: {
-    title: "Desbloquear PDF",
-    seoTitle: "Quitar Contraseña de PDF - Desbloquea tu Archivo PDF en Línea",
-    description: "Elimina fácilmente la protección con contraseña de tu archivo PDF con nuestra herramienta fácil de usar.",
-    keywords: "quitar contraseña de PDF, desbloquear PDF en línea, descifrar PDF, acceder a PDF asegurado, herramienta de eliminación de contraseña de PDF, desbloquear documento PDF",
-    color: "#3498db",
-    type: ".pdf",
-    to: "/unlock-pdf",
-    features: [
-      {
-        title: "Fácil de Usar",
-        description: "Desbloquea archivos PDF fácilmente con un proceso sencillo."
-      },
-      {
-        title: "Desencriptado Rápido",
-        description: "Elimina contraseñas de PDF rápidamente y de manera eficiente."
-      },
-      {
-        title: "Procesamiento Seguro",
-        description: "Tus archivos son manejados de forma segura y eliminados de nuestros servidores después de desbloquearlos."
+        title: "Seguro y Privado",
+        description: "Tus archivos se procesan de manera segura y se eliminan poco después de la procesamiento."
       }
     ]
   }
@@ -52,28 +29,22 @@ export const tool: _tool = {
 
 export const edit_page: _edit_page = {
   edit_page_titles: {
-    lock_pdf: "Bloquear PDF y proteger PDF",
-    unlock_pdf: "Desbloquear PDF"
+    rotate_pdf: "Opciones para Rotar PDF"
   },
-  loader_text: "por favor espera...",
+  loader_text: "Por favor, espera...",
   add_more_button: "Agregar más archivos",
   action_buttons: {
-    lock_pdf: "Bloquear PDF",
-    unlock_pdf: "Desbloquear PDF"
+    rotate_pdf: "Rotar PDF"
   },
-  lock_button_title: "Confirme la contraseña ingresándola dos veces.",
-  unlock_button_title: "Introduzca la contraseña para cada archivo protegido",
   pages: "páginas",
   page: "página",
-  lock_pdf: {
-    title: "Establezca una contraseña para bloquear su archivo PDF",
-    password: "Contraseña",
-    repeatPassword: "Repetir contraseña",
-    no_match: "Las contraseñas no coinciden."
-  },
-  unlock_pdf: {
-    title: "Ingrese la contraseña para los archivos que la requieran",
-    password_for: "contraseña para"
+  rotate_pdf_options: {
+    info1: "Pase el cursor sobre el archivo PDF para revelar un",
+    info2: "ícono. Haga clic en el ícono para rotar sus PDF. Alternativamente, puede usar los botones a continuación para rotar el archivo PDF hacia la izquierda o hacia la derecha",
+    left: "Izquierda",
+    right: "Derecha",
+    rotation: "Rotación",
+    reset_all: "Restablecer Todo"
   },
   filenameOptions: {
     label: "Nombre del archivo de salida (opcional)",
@@ -85,38 +56,24 @@ export const edit_page: _edit_page = {
       cta: "Actualizar ahora",
     },
   },
-  languageSelectContent: {
-    placeholder: "Elegir idiomas (máximo 3)",
-    warning: "Este documento está escaneado. Por favor seleccione su idioma para garantizar resultados precisos.",
-    ocr_warning: "Documento escaneado detectado. Para obtener los mejores resultados, utilice nuestra herramienta OCR PDF con detección avanzada de idioma y mayor precisión. También puede configurar el idioma aquí para procesamiento básico.",
-  },
 };
 
 export const downloadFile: _downloadFile = {
   titles: {
-    "lock-pdf": [
-      "¡Los archivos PDF han sido bloqueados!",
-      "¡El archivo PDF ha sido bloqueado!"
-    ],
-    "unlock-pdf": [
-      "¡Los archivos PDF han sido desbloqueados!",
-      "¡El archivo PDF ha sido desbloqueado!"
+    "rotate-pdf": [
+      "¡Los archivos PDF han sido rotados!",
+      "¡El archivo PDF ha sido rotado!"
     ]
   },
   btnText: {
-    "lock-pdf": [
-      "Descargar archivos PDF bloqueados",
-      "Descargar archivo PDF bloqueado"
-    ],
-    "unlock-pdf": [
-      "Descargar archivos PDF desbloqueados",
-      "Descargar archivos PDF desbloqueados"
+    "rotate-pdf": [
+      "Descargar archivos PDF rotados",
+      "Descargar archivo PDF rotado"
     ]
   },
   backto: {
-    "lock-pdf": "Volver a bloquear PDF",
-    "unlock-pdf": "Volver a desbloquear PDF"
-  },
+    "rotate-pdf": "Volver a Rotar PDF"
+  }
 };
 
 export const tools: _tools = {

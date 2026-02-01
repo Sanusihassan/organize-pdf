@@ -2,49 +2,26 @@ import type { tool as _tool, tools as _tools, edit_page as _edit_page, downloadF
 import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
-    Lock_PDF: {
-        title: "قفل PDF",
-        seoTitle: "حماية PDF بكلمة مرور - تأمين ملف PDF الخاص بك عبر الإنترنت",
-        description: "قم بتأمين ملف PDF الخاص بك بكلمة مرور لمنع الوصول غير المصرح به.",
-        keywords: "حماية PDF بكلمة مرور, تأمين ملف PDF, قفل PDF عبر الإنترنت, تشفير PDF, حماية مستند PDF, أداة أمان PDF",
-        color: "#2980b9",
+    Rotate_PDF: {
+        title: "تدوير PDF",
+        seoTitle: "تدوير صفحات PDF عبر الإنترنت - تدوير صفحات PDF بسهولة",
+        description: "قم بتدوير صفحات مستندات PDF الخاصة بك بسهولة لتحقيق الاتجاه الأمثل.",
+        keywords: "تدوير PDF, تدوير صفحات PDF, تدوير PDF عبر الإنترنت, ضبط اتجاه PDF, تدوير صفحات PDF بسهولة",
+        color: "#10ac84",
         type: ".pdf",
-        to: "/lock-pdf",
+        to: "/rotate-pdf",
         features: [
             {
-                title: "سهل الاستخدام",
-                description: "قم بقفل ملفات PDF الخاصة بك بسرعة بواجهة بسيطة."
+                title: "تدوير الصفحات بسهولة",
+                description: "قم بتدوير صفحات PDF بسهولة إلى الاتجاه المطلوب ببضع نقرات فقط."
             },
             {
-                title: "تشفير قوي",
-                description: "تطبيق تشفير قوي بكلمة مرور لحماية مستنداتك."
+                title: "تدوير الدفعات",
+                description: "قم بتدوير صفحات متعددة في وقت واحد لتعديلات المستند الفعالة."
             },
             {
-                title: "ضمان الخصوصية",
-                description: "يتم تشفير ملفاتك وحذفها من خوادمنا بعد المعالجة."
-            }
-        ]
-    },
-    Unlock_PDF: {
-        title: "فتح PDF",
-        seoTitle: "إزالة كلمة مرور PDF - فتح ملف PDF الخاص بك عبر الإنترنت",
-        description: "قم بإزالة حماية كلمة المرور من ملف PDF الخاص بك بسهولة باستخدام أداتنا سهلة الاستخدام.",
-        keywords: "إزالة كلمة مرور PDF, فتح PDF عبر الإنترنت, فك تشفير PDF, الوصول إلى PDF المؤمّن, أداة إزالة كلمة مرور PDF, فتح مستند PDF",
-        color: "#3498db",
-        type: ".pdf",
-        to: "/unlock-pdf",
-        features: [
-            {
-                title: "سهل الاستخدام",
-                description: "افتح ملفات PDF بسهولة بعملية مباشرة."
-            },
-            {
-                title: "فك تشفير سريع",
-                description: "إزالة كلمات مرور PDF بسرعة وكفاءة."
-            },
-            {
-                title: "معالجة آمنة",
-                description: "يتم التعامل مع ملفاتك بأمان وإزالتها من خوادمنا بعد الفتح."
+                title: "آمن وخاص",
+                description: "يتم معالجة ملفاتك بأمان ويتم حذفها بعد وقت قصير من المعالجة."
             }
         ]
     }
@@ -52,28 +29,22 @@ export const tool: _tool = {
 
 export const edit_page: _edit_page = {
     edit_page_titles: {
-        lock_pdf: "قفل PDF وحماية PDF",
-        unlock_pdf: "إلغاء قفل PDF"
+        rotate_pdf: "خيارات تدوير ملف PDF"
     },
-    loader_text: "الرجاء الانتظار...",
-    add_more_button: "أضف المزيد من الملفات",
+    loader_text: "يرجى الانتظار...",
+    add_more_button: "إضافة المزيد من الملفات",
     action_buttons: {
-        lock_pdf: "قفل PDF",
-        unlock_pdf: "إلغاء قفل PDF"
+        rotate_pdf: "تدوير ملف PDF"
     },
-    lock_button_title: "الرجاء تأكيد كلمة المرور عن طريق إدخالها مرتين.",
-    unlock_button_title: "أدخل كلمة المرور لكل ملف محمي",
     pages: "صفحات",
     page: "صفحة واحدة",
-    lock_pdf: {
-        title: "قم بتعيين كلمة مرور لقفل ملف PDF الخاص بك",
-        password: "كلمه السر",
-        repeatPassword: "اعد كلمة السر",
-        no_match: "كلمات المرور غير متطابقة."
-    },
-    unlock_pdf: {
-        title: "أدخل كلمة المرور للملفات التي تتطلب ذلك",
-        password_for: "كلمة السر ل"
+    rotate_pdf_options: {
+        info1: "قم بالتمرير فوق ال PDF لكشف",
+        info2: "انقر على الأيقونة لتدوير ملفات PDF الخاصة بك. بدلاً من ذلك ، يمكنك استخدام الأزرار أدناه لتدوير ملف PDF يسارًا أو يمينًا.",
+        rotation: "التدوير",
+        left: "يسار",
+        right: "يمين",
+        reset_all: "إعادة تعيين الكل"
     },
     filenameOptions: {
         label: "اسم الملف الناتج (اختياري)",
@@ -85,37 +56,23 @@ export const edit_page: _edit_page = {
             cta: "الترقية الآن",
         },
     },
-    languageSelectContent: {
-        placeholder: "اختر اللغات (حد أقصى 3)",
-        warning: "هذا المستند ممسوح ضوئيًا. يرجى اختيار لغته لضمان نتائج دقيقة.",
-        ocr_warning: "تم اكتشاف مستند ممسوح ضوئيًا. للحصول على أفضل النتائج، استخدم أداة OCR PDF الخاصة بنا مع اكتشاف متقدم للغة ودقة أعلى. يمكنك أيضًا تعيين اللغة هنا للمعالجة الأساسية.",
-    },
 };
 
 export const downloadFile: _downloadFile = {
     titles: {
-        "lock-pdf": [
-            "تم قفل ملفات ال PDF!",
-            "تم قفل ملف ال PDF!"
-        ],
-        "unlock-pdf": [
-            "تم إلغاء قفل ملفال ال PDF!",
-            "تم إلغاء قفل ملف ال PDF!"
+        "rotate-pdf": [
+            "تم تدوير ملفات PDF!",
+            "تم تدوير ملف PDF!"
         ]
     },
     btnText: {
-        "lock-pdf": [
-            "تنزيل ملفات PDF المقفلة",
-            "تنزيل ملف PDF المقفل"
-        ],
-        "unlock-pdf": [
-            "تحميل الملفات الغير مغلقة",
-            "تحميل الملف الغير مغلق"
+        "rotate-pdf": [
+            "تنزيل ملفات PDF المدوّرة",
+            "تنزيل ملف PDF المدوّر"
         ]
     },
     backto: {
-        "lock-pdf": "العودة إلى قفل PDF",
-        "unlock-pdf": "العودة إلى إلغاء قفل ملفات ال PDF"
+        "rotate-pdf": "العودة إلى تدوير ملف PDF"
     }
 };
 
