@@ -39,8 +39,8 @@ export const edit_page: _edit_page = {
   pages: "páginas",
   page: "página",
   rotate_pdf_options: {
-    info1: "Pase el cursor sobre el archivo PDF para revelar un",
-    info2: "ícono. Haga clic en el ícono para rotar sus PDF. Alternativamente, puede usar los botones a continuación para rotar el archivo PDF hacia la izquierda o hacia la derecha",
+    info1: "Pasa el cursor sobre el archivo PDF para revelar",
+    info2: "iconos. Haz clic en cualquiera de los iconos para rotar tus PDFs.",
     left: "Izquierda",
     right: "Derecha",
     rotation: "Rotación",
@@ -56,6 +56,10 @@ export const edit_page: _edit_page = {
       cta: "Actualizar ahora",
     },
   },
+  actionContent: {
+    current: "Actual",
+    info: "Positivo = en sentido horario, Negativo = en sentido antihorario",
+  }
 };
 
 export const downloadFile: _downloadFile = {
@@ -195,6 +199,9 @@ export const errors: _errors = {
     // Settings errors
     invalidSettings: "Configuraciones inválidas proporcionadas. Por favor, actualiza e inténtalo de nuevo.",
     conversionFailed: "Conversión fallida. Por favor, inténtalo de nuevo.",
+    noRotationsProvided: "Por favor, especifique la rotación para al menos un archivo",
+    rotationFailed: "Fallo al rotar el PDF. Por favor, inténtelo de nuevo.",
+    invalidRotationAngle: "Ángulo de rotación inválido. Use 90, 180 o 270 grados."
   },
 };
 

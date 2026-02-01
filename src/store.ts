@@ -1,4 +1,3 @@
-// Updated code with selectedLanguages and its related selectors removed
 import { createSlice, createSelector, type Draft, type PayloadAction } from "@reduxjs/toolkit";
 
 type WritableDraft<T> = {
@@ -18,11 +17,9 @@ export interface ToolState {
   limitationMsg: string;
   rotations: { k: string; r: number }[];
   passwords: { k: string; p: string }[];
-  password: string;
   subscriptionStatus: boolean | null;
   isAdBlocked: boolean;
   ocr_warning: string;
-  filesNotPasswordProtected: boolean;
 }
 
 const initialState: ToolState = {
@@ -39,8 +36,6 @@ const initialState: ToolState = {
   subscriptionStatus: null,
   isAdBlocked: false,
   ocr_warning: "",
-  password: "",
-  filesNotPasswordProtected: false
 };
 
 const toolSlice = createSlice({

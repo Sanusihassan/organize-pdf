@@ -42,9 +42,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
   const passwords = useSelector(
     (state: { tool: ToolState }) => state.tool.passwords,
   );
-  const password = useSelector(
-    (state: { tool: ToolState }) => state.tool.password,
-  );
   const dispatch = useDispatch();
   // file store
   const { files, setFiles, setFileInput, setDownloadBtn, setSubmitBtn } =
@@ -80,7 +77,6 @@ export const FileInputForm: React.FC<FileInputFormProps> = ({
             fileName,
             rotations,
             passwords,
-            password,
           },
           files,
           errors,

@@ -15,8 +15,7 @@ import {
   PATH_ACCEPTED_FILES,
   validateFiles,
 } from "../../src/utils";
-import type { Paths } from "../../src/content/content";
-import { toast } from "react-toastify";
+import { type Paths } from "../../src/content/content";
 
 type FileProps = {
   errors: _;
@@ -28,9 +27,10 @@ type FileProps = {
   drop_files: string;
   path: Paths;
   languageSelectProps: {
-    content: edit_page["languageSelectContent"];
+    content: edit_page["filenameOptions"];
     themeColor: string;
   };
+  actionContent: edit_page["actionContent"];
 };
 
 const Files = ({
@@ -41,6 +41,7 @@ const Files = ({
   drop_files,
   languageSelectProps,
   path,
+  actionContent,
 }: FileProps) => {
   const { files, setFiles } = useFileStore();
   const dispatch = useDispatch();
@@ -96,48 +97,6 @@ const Files = ({
       })();
     }, 500);
 
-    // Check if any file is not password protected
-    if (path === "unlock-pdf") {
-      (async () => {
-        let hasUnprotectedFile = false;
-
-        for (const file of files) {
-          try {
-            const arrayBuffer = await file.arrayBuffer();
-            const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
-
-            try {
-              await loadingTask.promise;
-              // If we reach here, the PDF is NOT password protected
-              hasUnprotectedFile = true;
-              break; // Exit the loop immediately
-            } catch (error: any) {
-              // Check if it's a password error
-              if (error.name === "PasswordException") {
-                // This is expected - the file IS password protected
-                continue;
-              }
-              // Other errors - log and continue
-              console.error("Error checking PDF:", error);
-            }
-          } catch (error) {
-            console.error("Error reading file:", error);
-          }
-        }
-        // Set state once after checking all files
-        if (files.length) {
-          dispatch(
-            setField({
-              filesNotPasswordProtected: hasUnprotectedFile,
-            }),
-          );
-          if (hasUnprotectedFile) {
-            toast.error(errors.alerts.notPasswordProtected);
-          }
-        }
-      })();
-    }
-
     return () => clearTimeout(timeoutId);
   }, [files, subscriptionStatus, path]);
 
@@ -185,7 +144,7 @@ const Files = ({
             loader_text={loader_text}
             fileDetailProps={fileDetailProps}
             languageSelectProps={languageSelectProps}
-            path={path}
+            actionContent={actionContent}
           />
         </div>
       ))}

@@ -1,20 +1,16 @@
-import type { edit_page as _ } from "../../src/content";
-import { LockPDFOptions } from "./Options/LockPDFOptions";
-export interface OptionsProps {
-  layout: "lock-pdf" | "unlock-pdf";
-  edit_page: _;
-}
-
-const Options = ({ layout, edit_page }: OptionsProps) => {
+import { RotateCw } from "lucide-react";
+import type { edit_page } from "../../src/content";
+import { RefreshIcon } from "@heroicons/react/solid";
+const Options = ({
+  rotate_pdf_options,
+}: {
+  rotate_pdf_options: edit_page["rotate_pdf_options"];
+}) => {
   return (
-    <>
-      {layout === "lock-pdf" ? (
-        <>
-          <div className="space"></div>
-          <LockPDFOptions lock_pdf={edit_page.lock_pdf} />
-        </>
-      ) : null}
-    </>
+    <div className="info mx-2">
+      {rotate_pdf_options.info1} <RefreshIcon className="icon" />
+      {" | "} <RotateCw className="icon" /> {rotate_pdf_options.info2}
+    </div>
   );
 };
 

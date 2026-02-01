@@ -37,7 +37,7 @@ export const edit_page = {
   page: "page",
   rotate_pdf_options: {
     info1: "Hover over the PDF file to reveal a",
-    info2: "icon. Click on the icon to rotate your PDFs. Alternatively, you can use the buttons below to rotate the PDF file left or right",
+    info2: "icons. Click any of the icons to rotate your PDFs.",
     left: "Left",
     right: "Right",
     rotation: "Rotation",
@@ -53,6 +53,10 @@ export const edit_page = {
       cta: "Upgrade now",
     },
   },
+  actionContent: {
+    current: "Current",
+    info: "Positive = clockwise, Negative = counter-clockwise",
+  }
 };
 
 export const downloadFile = {
@@ -203,6 +207,10 @@ export const errors = {
     // Settings errors
     invalidSettings: "Invalid settings provided. Please refresh and try again.",
     conversionFailed: "Conversion failed. Please try again.",
+    // please do the same for these:
+    noRotationsProvided: "Please specify rotation for at least one file",
+    rotationFailed: "Failed to rotate PDF. Please try again.",
+    invalidRotationAngle: "Invalid rotation angle. Use 90, 180, or 270 degrees."
   },
 };
 

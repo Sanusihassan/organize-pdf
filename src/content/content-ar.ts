@@ -39,8 +39,8 @@ export const edit_page: _edit_page = {
     pages: "صفحات",
     page: "صفحة واحدة",
     rotate_pdf_options: {
-        info1: "قم بالتمرير فوق ال PDF لكشف",
-        info2: "انقر على الأيقونة لتدوير ملفات PDF الخاصة بك. بدلاً من ذلك ، يمكنك استخدام الأزرار أدناه لتدوير ملف PDF يسارًا أو يمينًا.",
+        info1: "حرك الماوس فوق ملف PDF لكشف",
+        info2: "الأيقونات. انقر على أي من الأيقونات لتدوير ملفات PDF الخاصة بك.",
         rotation: "التدوير",
         left: "يسار",
         right: "يمين",
@@ -56,6 +56,10 @@ export const edit_page: _edit_page = {
             cta: "الترقية الآن",
         },
     },
+    actionContent: {
+        current: "الحالي",
+        info: "إيجابي = في اتجاه عقارب الساعة، سلبي = عكس اتجاه عقارب الساعة",
+    }
 };
 
 export const downloadFile: _downloadFile = {
@@ -192,6 +196,9 @@ export const errors: _errors = {
         invalidSettings: "إعدادات غير صالحة مقدمة. يرجى التحديث والمحاولة مرة أخرى.",
         conversionFailed: "فشل التحويل. يرجى المحاولة مرة أخرى.",
         tooManyFiles: "تم تحميل ملفات كثيرة جدًا",
+        noRotationsProvided: "يرجى تحديد الدوران لملف واحد على الأقل",
+        rotationFailed: "فشل تدوير PDF. يرجى المحاولة مرة أخرى.",
+        invalidRotationAngle: "زاوية دوران غير صالحة. استخدم 90 أو 180 أو 270 درجة."
     },
 };
 

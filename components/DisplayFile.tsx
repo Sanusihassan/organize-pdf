@@ -26,14 +26,7 @@ const DisplayFile = ({
 }: propTypes) => {
   const [toolTipSizes, setToolTipSizes] = useState<string[]>([]);
 
-  useEffect(() => {
-    // const isValid = validateFiles(files, extension, errors, dispatch, {
-    //   path: statePath,
-    // });
-    // if (isValid) {
-    //   dispatch(resetErrorMessage());
-    // }
-  }, [extension]);
+  useEffect(() => {}, [extension]);
 
   return (
     <>
@@ -47,9 +40,10 @@ const DisplayFile = ({
         drop_files={drop_files}
         path={path}
         languageSelectProps={{
-          content: edit_page.languageSelectContent,
+          content: edit_page.filenameOptions,
           themeColor: `var(--${path})`,
         }}
+        actionContent={edit_page.actionContent}
       />
     </>
   );

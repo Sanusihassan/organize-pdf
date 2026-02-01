@@ -39,8 +39,8 @@ export const edit_page: _edit_page = {
     pages: "पृष्ठ",
     page: "पृष्ठ",
     rotate_pdf_options: {
-        info1: "पीडीएफ फ़ाइल पर होवर करें ताकि",
-        info2: "आइकन प्रकट हो सके। आइकन पर क्लिक करके अपने पीडीएफ को घुमाएं। वैकल्पिक रूप से, आप पीडीएफ फ़ाइल को बाएं या दाएं घुमाने के लिए नीचे दिए गए बटन का उपयोग कर सकते हैं",
+        info1: "PDF फ़ाइल पर होवर करें ताकि प्रकट हो",
+        info2: "आइकन। अपनी PDFs को घुमाने के लिए किसी भी आइकन पर क्लिक करें।",
         left: "बाएं",
         right: "दाएं",
         rotation: "घुमाना",
@@ -56,6 +56,10 @@ export const edit_page: _edit_page = {
             cta: "अभी अपग्रेड करें",
         },
     },
+    actionContent: {
+        current: "वर्तमान",
+        info: "सकारात्मक = दक्षिणावर्त, नकारात्मक = वामावर्त",
+    }
 };
 
 export const downloadFile: _downloadFile = {
@@ -194,6 +198,9 @@ export const errors: _ = {
         // Settings errors
         invalidSettings: "अमान्य सेटिंग्स प्रदान की गईं। कृपया रिफ्रेश करें और पुनः प्रयास करें।",
         conversionFailed: "परिवर्तन विफल। कृपया पुनः प्रयास करें।",
+        noRotationsProvided: "कृपया कम से कम एक फ़ाइल के लिए रोटेशन निर्दिष्ट करें",
+        rotationFailed: "PDF को घुमाने में विफल। कृपया पुनः प्रयास करें。",
+        invalidRotationAngle: "अमान्य रोटेशन कोण। 90, 180, या 270 डिग्री का उपयोग करें।"
     },
 };
 

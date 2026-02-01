@@ -190,3 +190,6 @@ a.no-underline {
 .spinner-grow {
   @include extend("spinner-grow");
 }
+.info {
+  @include extend("alert alert-info");
+}

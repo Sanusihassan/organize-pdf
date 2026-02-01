@@ -29,10 +29,10 @@ type CardProps = OmitFileName<ActionProps> & {
   loader_text: string;
   fileDetailProps: [string, string, string];
   languageSelectProps: {
-    content: edit_page["languageSelectContent"];
+    content: edit_page["filenameOptions"];
     themeColor: string;
   };
-  path: "lock-pdf" | "unlock-pdf";
+  actionContent: edit_page["actionContent"];
 };
 
 const FileCard = ({
@@ -45,7 +45,7 @@ const FileCard = ({
   loader_text,
   fileDetailProps,
   languageSelectProps,
-  path,
+  actionContent,
 }: CardProps) => {
   const [showLoader, setShowLoader] = useState(true);
   const [imageUrl, setImageUrl] = useState("");
@@ -189,6 +189,7 @@ const FileCard = ({
         setPassword={setPassword}
         needsPassword={needsPassword}
         noRotation={languageSelectProps.themeColor.includes("pdf-to-text")}
+        content={actionContent}
       />
       <div className="card-body">
         {!showLoader ? (
@@ -197,7 +198,11 @@ const FileCard = ({
             src={imageUrl}
             alt={`Selected file ${index}`}
             draggable={false}
-            style={rotation ? { rotate: `${rotation.r}deg` } : undefined}
+            style={
+              rotation
+                ? { transform: `rotate(${rotation.r}deg)`, scale: 0.8 }
+                : undefined
+            }
           />
         ) : null}
 

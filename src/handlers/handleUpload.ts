@@ -1,8 +1,9 @@
+// now i want to fix the rotate-pdf api, this is the front-end i.e what i'm sending from the client:
 import axios from "axios";
 import { downloadConvertedFile } from "../downloadFile";
 import type { errors as _ } from "../content";
 import { type RefObject } from "react";
-import { resetErrorMessage, setField, type ToolState } from "../store";
+import { resetErrorMessage, setField } from "../store";
 import type { Action, Dispatch } from "@reduxjs/toolkit/react";
 import { parseErrorResponse } from "../utils";
 
@@ -10,7 +11,7 @@ let filesOnSubmit = [];
 let prevState = null;
 
 export const handleUpload = async (
-  e: React.FormEvent<HTMLFormElement>,
+  e: React.SubmitEvent<HTMLFormElement>,
   downloadBtn: RefObject<HTMLAnchorElement>,
   dispatch: Dispatch<Action>,
   state: {
@@ -25,7 +26,6 @@ export const handleUpload = async (
       k: string;
       p: string;
     }[];
-    password: string;
   },
   files: File[],
   errors: _
@@ -61,11 +61,6 @@ export const handleUpload = async (
   }
   formData.append("rotations", JSON.stringify(state.rotations));
   formData.append("passwords", JSON.stringify(state.passwords));
-
-  // Add lock password for lock-pdf route
-  if (state.path === "lock-pdf") {
-    formData.append("password", state.password);
-  }
 
   let url: string = "";
   let endpoint = "/api/";
@@ -182,8 +177,10 @@ export const handleUpload = async (
           'SERVER_CONFIG_ERROR': errors.alerts.serverError || 'Server configuration error',
 
           // Other errors
-          'INSUFFICIENT_CONVERSION_UNITS': errors.alerts.insufficientUnits || 'Insufficient conversion units',
-          'MAX_PAGES_EXCEEDED': errors.MAX_PAGES_EXCEEDED?.message || 'Maximum pages exceeded',
+          'MAX_PAGES_EXCEEDED': errors.MAX_PAGES_EXCEEDED?.message,
+          'NO_ROTATIONS_PROVIDED': errors.alerts.noRotationsProvided,
+          'ROTATION_FAILED': errors.alerts.rotationFailed,
+          'INVALID_ROTATION_ANGLE': errors.alerts.invalidRotationAngle,
         };
 
         const { errorCode } = parseErrorResponse(error);

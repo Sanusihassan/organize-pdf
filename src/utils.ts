@@ -9,7 +9,7 @@ import {
   type PageViewport,
   type RenderTask,
 } from "pdfjs-dist";
-import { toast } from "react-toastify";
+import { toast, type Id } from "react-toastify";
 import type { Paths } from "./content/content";
 import { renderQueue } from "./RenderQueue";
 
@@ -139,9 +139,9 @@ export async function getFirstPageAsImage(
         password: password || undefined,
       });
 
-      let tid;
+      let tid: Id;
 
-      loadingTask.onPassword = (updatePassword, reason) => {
+      loadingTask.onPassword = (updatePassword: (arg0: string) => void, reason: number) => {
         if (reason === pdfjs.PasswordResponses.NEED_PASSWORD) {
           if (password) {
             updatePassword(password);

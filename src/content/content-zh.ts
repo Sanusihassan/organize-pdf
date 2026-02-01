@@ -39,8 +39,8 @@ export const edit_page: _edit_page = {
     pages: "页",
     page: "页",
     rotate_pdf_options: {
-        info1: "悬停在PDF文件上以显示",
-        info2: "图标。单击图标以旋转您的PDF。或者，您可以使用下面的按钮将PDF文件向左或向右旋转",
+        info1: "将鼠标悬停在 PDF 文件上以显示",
+        info2: "图标。单击任何图标以旋转您的 PDFs。",
         left: "左",
         right: "右",
         rotation: "旋转",
@@ -56,6 +56,10 @@ export const edit_page: _edit_page = {
             cta: "立即升级",
         },
     },
+    actionContent: {
+        current: "当前",
+        info: "正 = 顺时针，负 = 逆时针",
+    }
 };
 
 export const downloadFile: _downloadFile = {
@@ -194,6 +198,9 @@ export const errors: _ = {
         // Settings errors
         invalidSettings: "提供的设置无效。请刷新并重试。",
         conversionFailed: "转换失败。请重试。",
+        noRotationsProvided: "请为至少一个文件指定旋转",
+        rotationFailed: "旋转 PDF 失败。请重试。",
+        invalidRotationAngle: "无效的旋转角度。使用 90、180 或 270 度。"
     },
 };
 
