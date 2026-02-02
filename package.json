@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
+    "@hello-pangea/dnd": "^18.0.1",
     "@reduxjs/toolkit": "^2.4.0",
     "@tailwindcss/vite": "^4.1.16",
     "@types/react": "^19.2.10",
@@ -23,7 +24,6 @@
     "pdfequips-navbar": "^3.6.18",
     "pdfjs-dist": "^4.9.155",
     "react": "^19.2.4",
-    "react-beautiful-dnd": "^13.1.1",
     "react-bootstrap": "^2.10.6",
     "react-countup": "^6.5.3",
     "react-dom": "^19.2.4",
