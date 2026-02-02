@@ -1,7 +1,7 @@
 import type {
   DraggableProvided,
   DraggableStateSnapshot,
-} from "react-beautiful-dnd";
+} from "@hello-pangea/dnd";
 import { ActionDiv, type ActionProps } from "./ActionDiv";
 import { Tooltip } from "react-tooltip";
 import type { errors as _, edit_page } from "../../src/content";
