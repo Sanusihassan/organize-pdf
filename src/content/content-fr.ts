@@ -2,26 +2,26 @@ import type { adBlockerContentType } from "./content";
 import type { edit_page as _edit_page, tool as _tool, tools as _tools, downloadFile as _downloadFile, errors as _ } from "../content";
 
 export const tool: _tool = {
-    Rotate_PDF: {
-        title: "Faire Pivoter PDF",
-        seoTitle: "Pivoter Pages PDF en Ligne - Rotation Facile de PDF",
-        description: "Faites pivoter facilement les pages de vos documents PDF pour obtenir l'orientation optimale.",
-        keywords: "pivoter PDF, rotation de pages PDF, pivoter PDF en ligne, ajuster l'orientation PDF, pivoter les pages de PDF",
-        color: "#10ac84",
+    Organize_PDF: {
+        title: "Organiser PDF",
+        seoTitle: "Réorganiser les Pages en Ligne - Outil d'Organisateur PDF",
+        description: "Réorganisez facilement les pages de votre document PDF selon l'ordre ou la séquence de votre choix.",
+        color: "#6c5ce7",
         type: ".pdf",
-        to: "/rotate-pdf",
+        to: "/organize-pdf",
+        keywords: "réorganiser les pages PDF, organisateur PDF, organiser PDF en ligne, réorganiser les pages PDF, arrangeur de pages PDF en ligne",
         features: [
             {
-                title: "Rotation Simple des Pages",
-                description: "Faites pivoter facilement les pages PDF à l'orientation souhaitée en quelques clics."
+                title: "Glisser-Déposer Simple",
+                description: "Réorganisez facilement les pages en utilisant une interface simple de glisser-déposer."
             },
             {
-                title: "Rotation par Lots",
-                description: "Faites pivoter plusieurs pages à la fois pour des ajustements de documents efficaces."
+                title: "Aperçu Avant Enregistrement",
+                description: "Prévisualisez vos modifications avant de finaliser le nouvel ordre des pages."
             },
             {
-                title: "Sûr et Privé",
-                description: "Vos fichiers sont traités en toute sécurité et sont supprimés peu de temps après le traitement."
+                title: "Sécurisé et Privé",
+                description: "Assurez la confidentialité et la sécurité de votre document lors de la réorganisation des pages."
             }
         ]
     }
@@ -29,57 +29,33 @@ export const tool: _tool = {
 
 export const edit_page: _edit_page = {
     edit_page_titles: {
-        rotate_pdf: "Options de rotation de PDF"
+        organize_pdf: "Options pour organiser les PDF"
     },
     loader_text: "Veuillez patienter...",
     add_more_button: "Ajouter plus de fichiers",
     action_buttons: {
-        rotate_pdf: "Rotation du PDF"
+        organize_pdf: "Organiser le PDF"
     },
     pages: "pages",
-    page: "page",
-    rotate_pdf_options: {
-        info1: "Survolez le fichier PDF pour révéler des",
-        info2: "icônes. Cliquez sur n'importe laquelle des icônes pour faire pivoter vos PDFs.",
-        left: "Gauche",
-        right: "Droite",
-        rotation: "Rotation",
-        reset_all: "Réinitialiser Tout"
-    },
-    filenameOptions: {
-        label: "Nom du fichier de sortie (facultatif)",
-        placeholder: "Entrez le nom du fichier",
-        helperText: "Ce sera le nom du PDF compressé lors du téléchargement.",
-        cta: "Voir les forfaits",
-        upgradeNotice: {
-            msg: "Les niveaux de 2.0 à 10.0 sont disponibles avec la version premium.",
-            cta: "Mettre à niveau maintenant",
-        },
-    },
-    actionContent: {
-        current: "Actuel",
-        info: "Positif = sens horaire, Négatif = sens antihoraire",
-    }
+    page: "page"
 };
 
 export const downloadFile: _downloadFile = {
     titles: {
-        "rotate-pdf": [
-            "Les fichiers PDF ont été tournés !",
-            "Le fichier PDF a été tourné !"
+        "organize-pdf": [
+            "Vos pages ont été organisées avec succès!"
         ]
     },
     btnText: {
-        "rotate-pdf": [
-            "Télécharger les fichiers PDF tournés",
-            "Télécharger le fichier PDF tourné"
+        "organize-pdf": [
+            "Télécharger le PDF modifié",
+            "Télécharger les fichiers modifiés"
         ]
     },
     backto: {
-        "rotate-pdf": "Retour à la rotation du PDF"
+        "organize-pdf": "Retour à Organiser le PDF"
     }
 };
-
 // French (fr) - tools
 export const tools: _tools = {
     select: "Sélectionner",

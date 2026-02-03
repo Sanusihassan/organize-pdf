@@ -2,26 +2,26 @@ import type { tool as _tool, tools as _tools, edit_page as _edit_page, downloadF
 import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
-    Rotate_PDF: {
-        title: "تدوير PDF",
-        seoTitle: "تدوير صفحات PDF عبر الإنترنت - تدوير صفحات PDF بسهولة",
-        description: "قم بتدوير صفحات مستندات PDF الخاصة بك بسهولة لتحقيق الاتجاه الأمثل.",
-        keywords: "تدوير PDF, تدوير صفحات PDF, تدوير PDF عبر الإنترنت, ضبط اتجاه PDF, تدوير صفحات PDF بسهولة",
-        color: "#10ac84",
+    Organize_PDF: {
+        title: "تنظيم PDF",
+        seoTitle: "إعادة ترتيب الصفحات عبر الإنترنت - أداة تنظيم PDF",
+        description: "إعادة ترتيب صفحات مستند PDF بسهولة لتناسب ترتيبك أو تسلسلك المفضل.",
+        color: "#6c5ce7",
         type: ".pdf",
-        to: "/rotate-pdf",
+        to: "/organize-pdf",
+        keywords: "إعادة ترتيب صفحات PDF, منظم PDF, تنظيم PDF عبر الإنترنت, إعادة ترتيب صفحات PDF, مُرتب صفحات PDF عبر الإنترنت",
         features: [
             {
-                title: "تدوير الصفحات بسهولة",
-                description: "قم بتدوير صفحات PDF بسهولة إلى الاتجاه المطلوب ببضع نقرات فقط."
+                title: "سحب وإفلات بسيط",
+                description: "إعادة ترتيب الصفحات بسهولة باستخدام واجهة سحب وإفلات بسيطة."
             },
             {
-                title: "تدوير الدفعات",
-                description: "قم بتدوير صفحات متعددة في وقت واحد لتعديلات المستند الفعالة."
+                title: "معاينة قبل الحفظ",
+                description: "معاينة تغييراتك قبل إتمام الترتيب الجديد للصفحات."
             },
             {
                 title: "آمن وخاص",
-                description: "يتم معالجة ملفاتك بأمان ويتم حذفها بعد وقت قصير من المعالجة."
+                description: "ضمان خصوصية وأمان المستند أثناء إعادة ترتيب الصفحات."
             }
         ]
     }
@@ -29,54 +29,31 @@ export const tool: _tool = {
 
 export const edit_page: _edit_page = {
     edit_page_titles: {
-        rotate_pdf: "خيارات تدوير ملف PDF"
+        organize_pdf: "خيارات تنظيم ملفات PDF"
     },
     loader_text: "يرجى الانتظار...",
     add_more_button: "إضافة المزيد من الملفات",
     action_buttons: {
-        rotate_pdf: "تدوير ملف PDF"
+        organize_pdf: "تنظيم ملف PDF"
     },
     pages: "صفحات",
-    page: "صفحة واحدة",
-    rotate_pdf_options: {
-        info1: "حرك الماوس فوق ملف PDF لكشف",
-        info2: "الأيقونات. انقر على أي من الأيقونات لتدوير ملفات PDF الخاصة بك.",
-        rotation: "التدوير",
-        left: "يسار",
-        right: "يمين",
-        reset_all: "إعادة تعيين الكل"
-    },
-    filenameOptions: {
-        label: "اسم الملف الناتج (اختياري)",
-        placeholder: "أدخل اسم الملف",
-        helperText: "سيكون هذا هو اسم ملف PDF المضغوط عند تنزيله.",
-        cta: "عرض الخطط",
-        upgradeNotice: {
-            msg: "المستويات من 2.0 إلى 10.0 متاحة مع الخطة المميزة.",
-            cta: "الترقية الآن",
-        },
-    },
-    actionContent: {
-        current: "الحالي",
-        info: "إيجابي = في اتجاه عقارب الساعة، سلبي = عكس اتجاه عقارب الساعة",
-    }
+    page: "صفحة"
 };
 
 export const downloadFile: _downloadFile = {
     titles: {
-        "rotate-pdf": [
-            "تم تدوير ملفات PDF!",
-            "تم تدوير ملف PDF!"
+        "organize-pdf": [
+            "تم تنظيم صفحاتك بنجاح!"
         ]
     },
     btnText: {
-        "rotate-pdf": [
-            "تنزيل ملفات PDF المدوّرة",
-            "تنزيل ملف PDF المدوّر"
+        "organize-pdf": [
+            "تحميل ملف PDF المعدّل",
+            "تحميل الملفات المعدّلة"
         ]
     },
     backto: {
-        "rotate-pdf": "العودة إلى تدوير ملف PDF"
+        "organize-pdf": "العودة إلى تنظيم PDF"
     }
 };
 

@@ -2,26 +2,26 @@ import type { edit_page as _edit_page, tool as _tool, tools as _tools, downloadF
 import type { adBlockerContentType } from "./content";
 
 export const tool: _tool = {
-    Rotate_PDF: {
-        title: "旋转 PDF",
-        seoTitle: "在线旋转 PDF 页 - 简单的 PDF 页旋转",
-        description: "轻松旋转 PDF 文档中的页面，以达到最佳方向。",
-        keywords: "旋转 PDF, PDF 页面旋转, 在线旋转 PDF, 调整 PDF 方向, 旋转 PDF 页",
-        color: "#10ac84",
+    Organize_PDF: {
+        title: "整理 PDF",
+        seoTitle: "在线重新排列页面 - PDF 整理工具",
+        description: "轻松重新排列 PDF 文档中的页面，以符合您喜欢的顺序或顺序。",
+        color: "#6c5ce7",
         type: ".pdf",
-        to: "/rotate-pdf",
+        to: "/organize-pdf",
+        keywords: "重新排列 PDF 页面, PDF 整理工具, 在线整理 PDF, 重新排序 PDF 页面,在线 PDF 页面排列工具",
         features: [
             {
-                title: "简单的页面旋转",
-                description: "只需几次点击即可轻松将 PDF 页面旋转到所需方向。"
+                title: "简单的拖放",
+                description: "使用简单的拖放界面轻松重新排列页面。"
             },
             {
-                title: "批量旋转",
-                description: "一次旋转多个页面，实现高效的文档调整。"
+                title: "保存前预览",
+                description: "在最终确定新页面顺序之前预览更改。"
             },
             {
-                title: "安全且私密",
-                description: "您的文件会被安全处理，并在处理后不久被删除。"
+                title: "安全和私密",
+                description: "在重新排列页面时确保文档的隐私和安全。"
             }
         ]
     }
@@ -29,56 +29,35 @@ export const tool: _tool = {
 
 export const edit_page: _edit_page = {
     edit_page_titles: {
-        rotate_pdf: "旋转PDF选项"
+        organize_pdf: "整理 PDF 选项"
     },
     loader_text: "请稍候...",
     add_more_button: "添加更多文件",
     action_buttons: {
-        rotate_pdf: "旋转PDF"
+        organize_pdf: "整理 PDF"
     },
     pages: "页",
-    page: "页",
-    rotate_pdf_options: {
-        info1: "将鼠标悬停在 PDF 文件上以显示",
-        info2: "图标。单击任何图标以旋转您的 PDFs。",
-        left: "左",
-        right: "右",
-        rotation: "旋转",
-        reset_all: "重置所有"
-    },
-    filenameOptions: {
-        label: "输出文件名（可选）",
-        placeholder: "输入文件名",
-        helperText: "这将是下载时压缩 PDF 的名称。",
-        cta: "查看方案",
-        upgradeNotice: {
-            msg: "2.0 到 10.0 的级别可在高级版中使用。",
-            cta: "立即升级",
-        },
-    },
-    actionContent: {
-        current: "当前",
-        info: "正 = 顺时针，负 = 逆时针",
-    }
+    page: "页"
 };
 
 export const downloadFile: _downloadFile = {
     titles: {
-        "rotate-pdf": [
-            "PDF文件已旋转！",
-            "PDF文件已旋转！"
+        "organize-pdf": [
+            "您的页面已成功组织！"
         ]
     },
     btnText: {
-        "rotate-pdf": [
-            "下载旋转后的PDF文件",
-            "下载旋转后的PDF文件"
+        "organize-pdf": [
+            "下载修改后的PDF",
+            "下载修改后的文件"
         ]
     },
     backto: {
-        "rotate-pdf": "返回旋转PDF"
+        "organize-pdf": "返回组织PDF"
     }
 };
+
+
 
 
 

@@ -1,24 +1,25 @@
+
 export const tool = {
-  Rotate_PDF: {
-    title: "Rotate PDF",
-    seoTitle: "Rotate PDF Pages Online - Easy PDF Page Rotation",
-    description: "Easily rotate pages within your PDF documents to achieve optimal orientation.",
-    keywords: "rotate PDF, PDF page rotation, rotate PDF online, adjust PDF orientation, rotate pages in PDF",
-    color: "#10ac84",
+  Organize_PDF: {
+    title: "Organize PDF",
+    seoTitle: "Rearrange Pages Online - PDF Organizer Tool",
+    description: "Effortlessly rearrange the pages in your PDF document to suit your preferred order or sequence.",
+    color: "#6c5ce7",
     type: ".pdf",
-    to: "/rotate-pdf",
+    to: "/organize-pdf",
+    keywords: "rearrange PDF pages, PDF organizer, organize PDF online, reorder PDF pages, online PDF page arranger",
     features: [
       {
-        title: "Simple Page Rotation",
-        description: "Easily rotate PDF pages to the desired orientation with just a few clicks."
+        title: "Simple Drag-and-Drop",
+        description: "Easily rearrange pages using a simple drag-and-drop interface."
       },
       {
-        title: "Batch Rotation",
-        description: "Rotate multiple pages at once for efficient document adjustments."
+        title: "Preview Before Saving",
+        description: "Preview your changes before finalizing the new order of pages."
       },
       {
         title: "Secure and Private",
-        description: "Your files are processed securely and are deleted shortly after processing."
+        description: "Ensure your document's privacy and security while rearranging pages."
       }
     ]
   }
@@ -26,56 +27,34 @@ export const tool = {
 
 export const edit_page = {
   edit_page_titles: {
-    rotate_pdf: "Rotate PDF options"
+    organize_pdf: "Organize PDF options"
   },
   loader_text: "please wait...",
   add_more_button: "Add more files",
   action_buttons: {
-    rotate_pdf: "Rotate PDF"
+    organize_pdf: "Organize PDF"
   },
   pages: "pages",
-  page: "page",
-  rotate_pdf_options: {
-    info1: "Hover over the PDF file to reveal a",
-    info2: "icons. Click any of the icons to rotate your PDFs.",
-    left: "Left",
-    right: "Right",
-    rotation: "Rotation",
-    reset_all: "Reset All"
-  },
-  filenameOptions: {
-    label: "Output File Name (Optional)",
-    placeholder: "Enter file name",
-    helperText: "This will be the name of the compressed PDF when downloaded.",
-    cta: "View Plans",
-    upgradeNotice: {
-      msg: "Levels from 2.0 to 10.0 are available with premium.",
-      cta: "Upgrade now",
-    },
-  },
-  actionContent: {
-    current: "Current",
-    info: "Positive = clockwise, Negative = counter-clockwise",
-  }
+  page: "page"
 };
 
 export const downloadFile = {
   titles: {
-    "rotate-pdf": [
-      "PDF files have been rotated!",
-      "PDF file has been rotated!"
+    "organize-pdf": [
+      "Your pages have been successfully organized!"
     ]
   },
   btnText: {
-    "rotate-pdf": [
-      "Download Rotated PDF files",
-      "Download Rotated PDF file"
+    "organize-pdf": [
+      "Download Modified PDF",
+      "Download Modified files"
     ]
   },
   backto: {
-    "rotate-pdf": "Back To Rotate PDF"
+    "organize-pdf": "Back To Organize PDF"
   }
 };
+
 export type ToolType = {
   title: string;
   seoTitle: string;
