@@ -1,12 +1,10 @@
 import { type Dispatch, type SetStateAction, useEffect } from "react";
 import type { errors as _, edit_page } from "../../src/content";
-import FileCard from "./FileCard";
 import { useDropzone } from "react-dropzone";
 import { useFileStore } from "../../src/file-store";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchSubscriptionStatus } from "fetch-subscription-status";
 import { setField, type ToolState } from "../../src/store";
-import * as pdfjsLib from "pdfjs-dist";
 import {
   ACCEPTED,
   calculatePages,
@@ -16,33 +14,18 @@ import {
   validateFiles,
 } from "../../src/utils";
 import { type Paths } from "../../src/content/content";
+import OrganizePDFFileCard from "./OrganizePDFFileCard";
 
 type FileProps = {
   errors: _;
-  extension: string;
   toolTipSizes: string[];
   setToolTipSizes: Dispatch<SetStateAction<string[]>>;
-  loader_text: string;
-  fileDetailProps: [string, string, string];
   drop_files: string;
   path: Paths;
-  languageSelectProps: {
-    content: edit_page["filenameOptions"];
-    themeColor: string;
-  };
-  actionContent: edit_page["actionContent"];
+  fileCard: edit_page["fileCard"];
 };
 
-const Files = ({
-  errors,
-  extension,
-  loader_text,
-  fileDetailProps,
-  drop_files,
-  languageSelectProps,
-  path,
-  actionContent,
-}: FileProps) => {
+const Files = ({ errors, drop_files, path, fileCard }: FileProps) => {
   const { files, setFiles } = useFileStore();
   const dispatch = useDispatch();
   const subscriptionStatus = useSelector(
@@ -125,7 +108,7 @@ const Files = ({
   return (
     <div
       {...getRootProps()}
-      className={`display-file position-relative ${isDragActive ? "dragging-over" : ""}`}
+      className={`position-relative ${isDragActive ? "dragging-over" : ""}`}
     >
       <input {...getInputProps()} />
 
@@ -133,19 +116,7 @@ const Files = ({
 
       {files.map((file, index) => (
         <div key={file.name} className="drag-element">
-          <FileCard
-            extension={extension}
-            file={file}
-            index={index}
-            isDraggable={false}
-            provided={null}
-            snapshot={null}
-            errors={errors}
-            loader_text={loader_text}
-            fileDetailProps={fileDetailProps}
-            languageSelectProps={languageSelectProps}
-            actionContent={actionContent}
-          />
+          <OrganizePDFFileCard file={file} errors={errors} content={fileCard} />
         </div>
       ))}
     </div>

@@ -37,7 +37,24 @@ export const edit_page: _edit_page = {
         organize_pdf: "Organiser le PDF"
     },
     pages: "pages",
-    page: "page"
+    page: "page",
+    filenameOptions: {
+        label: "Nom du fichier de sortie (facultatif)",
+        placeholder: "Entrez le nom du fichier",
+        helperText: "Ce sera le nom du PDF compressé lors du téléchargement.",
+        cta: "Voir les forfaits",
+        upgradeNotice: {
+            msg: "Les niveaux de 2.0 à 10.0 sont disponibles avec la version premium.",
+            cta: "Mettre à niveau maintenant",
+        },
+    },
+    fileCard: {
+        page: "Page",
+        pages: "Pages",
+        remove_file: "Supprimer le fichier",
+        loading: "Chargement...",
+        drag_to_reorder: "Glissez les pages pour les réorganiser",
+    },
 };
 
 export const downloadFile: _downloadFile = {

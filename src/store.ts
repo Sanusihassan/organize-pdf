@@ -20,6 +20,9 @@ export interface ToolState {
   subscriptionStatus: boolean | null;
   isAdBlocked: boolean;
   ocr_warning: string;
+  pageCount: number;
+  pageOrders: number[]; // Add this
+  selectedFile: string
 }
 
 const initialState: ToolState = {
@@ -36,6 +39,9 @@ const initialState: ToolState = {
   subscriptionStatus: null,
   isAdBlocked: false,
   ocr_warning: "",
+  pageCount: 0,
+  pageOrders: [],
+  selectedFile: ""
 };
 
 const toolSlice = createSlice({

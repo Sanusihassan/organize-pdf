@@ -43,7 +43,6 @@
     "@astrojs/react": "^4.4.2",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^24.10.4",
-    "@types/react-beautiful-dnd": "^13.1.8",
     "sass": "^1.82.0"
   }
 }

@@ -9,7 +9,6 @@ import { type ToolState, resetErrorMessage, setField } from "../src/store";
 import { useFileStore } from "../src/file-store";
 import AddMoreButton from "./EditArea/AddMoreButton";
 import { SubmitBtn } from "./EditArea/SubmitBtn";
-import Options from "./DisplayFile/Options";
 // import { WarningAlert } from "./WarningAlert";
 import type { Paths } from "../src/content/content";
 
@@ -62,9 +61,6 @@ const EditPage = ({
       <section className="edit-area position-relative">
         <DisplayFile
           extension={extension}
-          pages={pages}
-          page={page}
-          lang={lang}
           errors={errors}
           edit_page={edit_page}
           drop_files={drop_files}
@@ -104,7 +100,7 @@ const EditPage = ({
             }
           </bdi>
         </h5>
-        <Options rotate_pdf_options={edit_page.rotate_pdf_options} />
+        {/* <Options rotate_pdf_options={edit_page.rotate_pdf_options} /> */}
         <div className="hide-onsmall">
           <SubmitBtn errors={errors} k={path} edit_page={edit_page} />
         </div>

@@ -37,7 +37,24 @@ export const edit_page: _edit_page = {
         organize_pdf: "पीडीएफ संगठित करें"
     },
     pages: "पृष्ठ",
-    page: "पृष्ठ"
+    page: "पृष्ठ",
+    filenameOptions: {
+        label: "आउटपुट फ़ाइल का नाम (वैकल्पिक)",
+        placeholder: "फ़ाइल का नाम दर्ज करें",
+        helperText: "डाउनलोड करते समय यह संकुचित PDF का नाम होगा।",
+        cta: "योजनाएँ देखें",
+        upgradeNotice: {
+            msg: "2.0 से 10.0 तक के स्तर प्रीमियम में उपलब्ध हैं।",
+            cta: "अभी अपग्रेड करें",
+        },
+    },
+    fileCard: {
+        page: "पेज",
+        pages: "पेज",
+        remove_file: "फाइल हटाएं",
+        loading: "लोड हो रहा है...",
+        drag_to_reorder: "उन्हें पुनः क्रमित करने के लिए पेजों को ड्रैग करें",
+    },
 };
 
 export const downloadFile: _downloadFile = {

@@ -19,11 +19,13 @@ const DownloadFile = ({
   const { files, downloadBtn } = useFileStore();
   const dispatch = useDispatch();
   const showDownloadBtn = useSelector(
-    (state: { tool: ToolState }) => state.tool.showDownloadBtn
+    (state: { tool: ToolState }) => state.tool.showDownloadBtn,
   );
   const subscriptionStatus = useSelector(
-    (state: { tool: ToolState }) => state.tool.subscriptionStatus
+    (state: { tool: ToolState }) => state.tool.subscriptionStatus,
   );
+  const titles = downloadFile.titles[path as keyof typeof downloadFile.titles];
+  const title = titles[files && files.length > 1 ? 0 : 1] || titles[0];
   useEffect(() => {}, [downloadFile, showDownloadBtn]);
   return (
     <>
@@ -31,13 +33,7 @@ const DownloadFile = ({
         className={`download-page${showDownloadBtn ? " d-flex" : " d-none"}`}
       >
         <h3 className="text-center mb-4">
-          <bdi>
-            {downloadFile.titles &&
-              downloadFile.titles[path as keyof typeof downloadFile.titles] &&
-              downloadFile.titles[path as keyof typeof downloadFile.titles][
-                files && files.length > 1 ? 0 : 1
-              ]}
-          </bdi>
+          <bdi>{title}</bdi>
         </h3>
         <div className="download-btn-container">
           <button

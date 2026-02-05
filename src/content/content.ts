@@ -35,7 +35,24 @@ export const edit_page = {
     organize_pdf: "Organize PDF"
   },
   pages: "pages",
-  page: "page"
+  page: "page",
+  fileCard: {
+    page: "Page",
+    pages: "Pages",
+    remove_file: "Remove file",
+    loading: "Loading...",
+    drag_to_reorder: "Drag pages to reorder them",
+  },
+  filenameOptions: {
+    label: "Output File Name (Optional)",
+    placeholder: "Enter file name",
+    helperText: "This will be the name of the compressed PDF when downloaded.",
+    cta: "View Plans",
+    upgradeNotice: {
+      msg: "Levels from 2.0 to 10.0 are available with premium.",
+      cta: "Upgrade now",
+    },
+  },
 };
 
 export const downloadFile = {
@@ -68,7 +85,7 @@ export type ToolType = {
     description: string;
   }[];
 }
-export type Paths = "rotate-pdf";
+export type Paths = "organize-pdf";
 
 export const tools = {
   select: "Select",
@@ -186,10 +203,10 @@ export const errors = {
     // Settings errors
     invalidSettings: "Invalid settings provided. Please refresh and try again.",
     conversionFailed: "Conversion failed. Please try again.",
-    // please do the same for these:
-    noRotationsProvided: "Please specify rotation for at least one file",
-    rotationFailed: "Failed to rotate PDF. Please try again.",
-    invalidRotationAngle: "Invalid rotation angle. Use 90, 180, or 270 degrees."
+    noPageOrders: "No page order provided",
+    invalidPageOrders: "Invalid page order format",
+    pageOrdersNotReordered: "Pages are already in original order",
+    organizingFailed: "Failed to organize PDF. Please try again."
   },
 };
 

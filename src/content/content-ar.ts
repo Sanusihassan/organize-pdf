@@ -37,7 +37,24 @@ export const edit_page: _edit_page = {
         organize_pdf: "تنظيم ملف PDF"
     },
     pages: "صفحات",
-    page: "صفحة"
+    page: "صفحة",
+    filenameOptions: {
+        label: "اسم الملف الناتج (اختياري)",
+        placeholder: "أدخل اسم الملف",
+        helperText: "سيكون هذا هو اسم ملف PDF المضغوط عند تنزيله.",
+        cta: "عرض الخطط",
+        upgradeNotice: {
+            msg: "المستويات من 2.0 إلى 10.0 متاحة مع الخطة المميزة.",
+            cta: "الترقية الآن",
+        },
+    },
+    fileCard: {
+        page: "صفحة",
+        pages: "صفحات",
+        remove_file: "إزالة الملف",
+        loading: "جاري التحميل...",
+        drag_to_reorder: "اسحب الصفحات لإعادة ترتيبها",
+    },
 };
 
 export const downloadFile: _downloadFile = {

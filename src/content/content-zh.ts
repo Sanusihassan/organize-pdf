@@ -37,7 +37,24 @@ export const edit_page: _edit_page = {
         organize_pdf: "整理 PDF"
     },
     pages: "页",
-    page: "页"
+    page: "页",
+    filenameOptions: {
+        label: "输出文件名（可选）",
+        placeholder: "输入文件名",
+        helperText: "这将是下载时压缩 PDF 的名称。",
+        cta: "查看方案",
+        upgradeNotice: {
+            msg: "2.0 到 10.0 的级别可在高级版中使用。",
+            cta: "立即升级",
+        },
+    },
+    fileCard: {
+        page: "页",
+        pages: "页",
+        remove_file: "移除文件",
+        loading: "正在加载...",
+        drag_to_reorder: "拖动页面以重新排序",
+    },
 };
 
 export const downloadFile: _downloadFile = {
