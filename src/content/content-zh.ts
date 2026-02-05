@@ -194,9 +194,10 @@ export const errors: _ = {
         // Settings errors
         invalidSettings: "提供的设置无效。请刷新并重试。",
         conversionFailed: "转换失败。请重试。",
-        noRotationsProvided: "请为至少一个文件指定旋转",
-        rotationFailed: "旋转 PDF 失败。请重试。",
-        invalidRotationAngle: "无效的旋转角度。使用 90、180 或 270 度。"
+        invalidPageOrders: "无效的页面顺序格式",
+        pageOrdersNotReordered: "页面已是原始顺序",
+        organizingFailed: "组织 PDF 失败。请重试。",
+        noPageOrders: "未提供页面顺序",
     },
 };
 

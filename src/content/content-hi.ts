@@ -192,9 +192,10 @@ export const errors: _ = {
         // Settings errors
         invalidSettings: "अमान्य सेटिंग्स प्रदान की गईं। कृपया रिफ्रेश करें और पुनः प्रयास करें।",
         conversionFailed: "परिवर्तन विफल। कृपया पुनः प्रयास करें।",
-        noRotationsProvided: "कृपया कम से कम एक फ़ाइल के लिए रोटेशन निर्दिष्ट करें",
-        rotationFailed: "PDF को घुमाने में विफल। कृपया पुनः प्रयास करें。",
-        invalidRotationAngle: "अमान्य रोटेशन कोण। 90, 180, या 270 डिग्री का उपयोग करें।"
+        invalidPageOrders: "अमान्य पेज क्रम फॉर्मेट",
+        pageOrdersNotReordered: "पेज पहले से ही मूल क्रम में हैं",
+        organizingFailed: "PDF व्यवस्थित करने में विफल। कृपया पुनः प्रयास करें।",
+        noPageOrders: "कोई पेज क्रम प्रदान नहीं किया गया",
     },
 };
 

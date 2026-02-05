@@ -203,6 +203,7 @@ export const errors = {
     // Settings errors
     invalidSettings: "Invalid settings provided. Please refresh and try again.",
     conversionFailed: "Conversion failed. Please try again.",
+    // please do the same for these:
     noPageOrders: "No page order provided",
     invalidPageOrders: "Invalid page order format",
     pageOrdersNotReordered: "Pages are already in original order",

@@ -190,9 +190,10 @@ export const errors: _errors = {
         invalidSettings: "إعدادات غير صالحة مقدمة. يرجى التحديث والمحاولة مرة أخرى.",
         conversionFailed: "فشل التحويل. يرجى المحاولة مرة أخرى.",
         tooManyFiles: "تم تحميل ملفات كثيرة جدًا",
-        noRotationsProvided: "يرجى تحديد الدوران لملف واحد على الأقل",
-        rotationFailed: "فشل تدوير PDF. يرجى المحاولة مرة أخرى.",
-        invalidRotationAngle: "زاوية دوران غير صالحة. استخدم 90 أو 180 أو 270 درجة."
+        invalidPageOrders: "تنسيق ترتيب الصفحات غير صالح",
+        pageOrdersNotReordered: "الصفحات بالفعل في الترتيب الأصلي",
+        organizingFailed: "فشل تنظيم ملف PDF. يرجى المحاولة مرة أخرى.",
+        noPageOrders: "لم يتم تقديم ترتيب الصفحات",
     },
 };
 

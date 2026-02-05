@@ -193,9 +193,10 @@ export const errors: _errors = {
     // Settings errors
     invalidSettings: "Configuraciones inválidas proporcionadas. Por favor, actualiza e inténtalo de nuevo.",
     conversionFailed: "Conversión fallida. Por favor, inténtalo de nuevo.",
-    noRotationsProvided: "Por favor, especifique la rotación para al menos un archivo",
-    rotationFailed: "Fallo al rotar el PDF. Por favor, inténtelo de nuevo.",
-    invalidRotationAngle: "Ángulo de rotación inválido. Use 90, 180 o 270 grados."
+    invalidPageOrders: "Formato de orden de páginas inválido",
+    pageOrdersNotReordered: "Las páginas ya están en el orden original",
+    organizingFailed: "Error al organizar el PDF. Por favor, inténtelo de nuevo.",
+    noPageOrders: "No se proporcionó orden de páginas",
   },
 };
 
