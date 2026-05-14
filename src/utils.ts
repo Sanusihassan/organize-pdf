@@ -165,7 +165,7 @@ export async function getFirstPageAsImage(
       const pdf: PDFDocumentProxy = await loadingTask.promise;
       const page = await pdf.getPage(1);
 
-      const scale = 1.5;
+      const scale = .95;
       const viewport: PageViewport = page.getViewport({ scale });
 
       // Try OffscreenCanvas for better performance (if available)
@@ -547,7 +547,7 @@ export const validateFiles = (
     filesToValidate
       .map((file) => genericFileValidation(file, mimetype))
       .find((result) => result !== null) || null;
-  let tid = null;
+  let tid: Id = "";
   if (errorCode) {
     dispatch(setField({ errorCode }));
     let errMsg = "";
