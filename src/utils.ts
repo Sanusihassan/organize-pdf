@@ -6,6 +6,7 @@ import * as pdfjs from "pdfjs-dist";
 import axios from "axios";
 import {
   type PDFDocumentProxy,
+  type PDFPageProxy,
   type PageViewport,
   type RenderTask,
 } from "pdfjs-dist";
@@ -119,19 +120,99 @@ export const getFileDetailsTooltipContent = async (
   return tooltipContent;
 };
 
+// Conservative caps. Chrome allows more; Safari/iOS allows much less.
+const MAX_CANVAS_SIDE = 8192;
+const MAX_CANVAS_AREA = 16_777_216; // 4096 x 4096
+
+function fitScale(
+  baseWidth: number,
+  baseHeight: number,
+  requestedScale: number,
+  maxDimension?: number
+): number {
+  let scale = requestedScale;
+
+  if (maxDimension) {
+    const longest = Math.max(baseWidth, baseHeight) * scale;
+    if (longest > maxDimension) scale *= maxDimension / longest;
+  }
+
+  const side = Math.max(baseWidth, baseHeight) * scale;
+  if (side > MAX_CANVAS_SIDE) scale *= MAX_CANVAS_SIDE / side;
+
+  const area = baseWidth * scale * (baseHeight * scale);
+  if (area > MAX_CANVAS_AREA) scale *= Math.sqrt(MAX_CANVAS_AREA / area);
+
+  return scale;
+}
+
+async function renderPageToDataUrl(
+  page: PDFPageProxy,
+  requestedScale: number,
+  maxDimension?: number
+): Promise<string> {
+  const base = page.getViewport({ scale: 1 });
+  const scale = fitScale(base.width, base.height, requestedScale, maxDimension);
+
+  const viewport: PageViewport = page.getViewport({ scale });
+  const width = Math.max(1, Math.ceil(viewport.width));
+  const height = Math.max(1, Math.ceil(viewport.height));
+
+  const draw = async (
+    canvas: OffscreenCanvas | HTMLCanvasElement
+  ): Promise<string> => {
+    canvas.width = width;
+    canvas.height = height;
+
+    const context = canvas.getContext("2d");
+    if (!context) throw new Error("Canvas context not available.");
+
+    const renderTask: RenderTask = page.render({
+      canvasContext: context as any,
+      viewport,
+    });
+    await renderTask.promise;
+
+    if (canvas instanceof OffscreenCanvas) {
+      const blob = await canvas.convertToBlob({ type: "image/png" });
+      return blobToDataURL(blob);
+    }
+
+    const dataUrl = canvas.toDataURL();
+    canvas.width = 0;
+    canvas.height = 0;
+    return dataUrl;
+  };
+
+  if (typeof OffscreenCanvas !== "undefined") {
+    try {
+      return await draw(new OffscreenCanvas(width, height));
+    } catch (error) {
+      // Allocation can fail without reporting zeroed dimensions, so this
+      // must catch, not just null-check. Fall through to the DOM canvas.
+      console.warn("OffscreenCanvas render failed, retrying on DOM canvas:", error);
+    }
+  }
+
+  return draw(document.createElement("canvas"));
+}
+
+
 export async function getFirstPageAsImage(
   file: File,
   dispatch: Dispatch<Action>,
   errors: _,
   password?: string
 ): Promise<string> {
-  // Wrap the entire operation in the queue
   return renderQueue.add(async () => {
     const fileUrl = URL.createObjectURL(file);
 
     if (!file.size) {
+      URL.revokeObjectURL(fileUrl);
       return emptyPDFHandler(dispatch, errors);
     }
+
+    let pdf: PDFDocumentProxy | null = null;
 
     try {
       const loadingTask = pdfjs.getDocument({
@@ -139,85 +220,52 @@ export async function getFirstPageAsImage(
         password: password || undefined,
       });
 
-      let tid: Id;
-
-      loadingTask.onPassword = (updatePassword: (arg0: string) => void, reason: number) => {
-        if (reason === pdfjs.PasswordResponses.NEED_PASSWORD) {
-          if (password) {
-            updatePassword(password);
-            if (tid) {
-              toast.dismiss(tid);
-            }
-          } else {
-            dispatch(setField({ errorCode: "PASSWORD_REQUIRED" }));
-            tid = toast.error(errors.PASSWORD_REQUIRED.message);
-            throw new Error("PASSWORD_REQUIRED");
-          }
-        } else if (reason === pdfjs.PasswordResponses.INCORRECT_PASSWORD) {
-          dispatch(setField({ errorCode: "INCORRECT_PASSWORD" }));
-          tid = toast.error(errors.INCORRECT_PASSWORD.message);
-          throw new Error("INCORRECT_PASSWORD");
+      // Only supply the password here. If we don't call updatePassword,
+      // loadingTask.promise rejects with a PasswordException the catch handles.
+      loadingTask.onPassword = (
+        updatePassword: (arg0: string) => void,
+        reason: number
+      ) => {
+        if (reason === pdfjs.PasswordResponses.NEED_PASSWORD && password) {
+          updatePassword(password);
         }
       };
-      dispatch(setField({ errorCode: null }));
-      dispatch(setField({ errorMessage: "" }));
 
-      const pdf: PDFDocumentProxy = await loadingTask.promise;
+      dispatch(setField({ errorCode: null, errorMessage: "" }));
+
+      pdf = await loadingTask.promise;
       const page = await pdf.getPage(1);
 
-      const scale = .95;
-      const viewport: PageViewport = page.getViewport({ scale });
+      const dataUrl = await renderPageToDataUrl(page, 0.95, 1200);
 
-      // Try OffscreenCanvas for better performance (if available)
-      const canvas = typeof OffscreenCanvas !== 'undefined'
-        ? new OffscreenCanvas(viewport.width, viewport.height)
-        : document.createElement("canvas");
-
-      if (canvas instanceof HTMLCanvasElement) {
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-      }
-
-      const context = canvas.getContext("2d");
-      if (!context) {
-        throw new Error("Canvas context not available.");
-      }
-
-      const renderTask: RenderTask = page.render({
-        canvasContext: context as any,
-        viewport: viewport,
-      });
-
-      await renderTask.promise;
-
-      // Convert to data URL
-      let dataUrl: string;
-      if (canvas instanceof OffscreenCanvas) {
-        const blob = await canvas.convertToBlob({ type: 'image/png' });
-        dataUrl = await blobToDataURL(blob);
-      } else {
-        dataUrl = canvas.toDataURL();
-      }
-
-      URL.revokeObjectURL(fileUrl);
+      page.cleanup();
       return dataUrl;
-
     } catch (error: any) {
+      // Identify password errors by NAME, never by numeric code — pdf.js
+      // codes (1, 2) collide with DOMException legacy codes
+      // (IndexSizeError = 1, NotSupportedError = 9, InvalidStateError = 11).
+      if (error?.name === "PasswordException") {
+        const key =
+          error.code === pdfjs.PasswordResponses.INCORRECT_PASSWORD
+            ? "INCORRECT_PASSWORD"
+            : "PASSWORD_REQUIRED";
+
+        dispatch(setField({ errorCode: key, errorMessage: errors[key].message }));
+        toast.error(errors[key].message);
+        return "/images/locked.png";
+      }
+
+      console.error("getFirstPageAsImage failed:", error?.name, error?.code, error);
+      dispatch(
+        setField({
+          errorCode: "FILE_CORRUPT",
+          errorMessage: errors.FILE_CORRUPT.message,
+        })
+      );
+      return DEFAULT_PDF_IMAGE;
+    } finally {
+      await pdf?.destroy();
       URL.revokeObjectURL(fileUrl);
-
-      if (!error.code) {
-        dispatch(setField({ errorMessage: errors.FILE_CORRUPT.message }));
-        return DEFAULT_PDF_IMAGE;
-      }
-
-      const { code } = error;
-      if (code === pdfjs.PasswordResponses.NEED_PASSWORD) {
-        dispatch(setField({ errorMessage: errors.PASSWORD_REQUIRED.message }));
-        return "/images/locked.png";
-      } else {
-        dispatch(setField({ errorMessage: errors.INCORRECT_PASSWORD.message }));
-        return "/images/locked.png";
-      }
     }
   });
 }
@@ -226,60 +274,61 @@ export async function getNthPageAsImage(
   file: File,
   dispatch: Dispatch<Action>,
   errors: _,
-  pageNumber: number
+  pageNumber: number,
+  password?: string
 ): Promise<string> {
   return renderQueue.add(async () => {
     const fileUrl = URL.createObjectURL(file);
 
     if (!file.size) {
+      URL.revokeObjectURL(fileUrl);
       return emptyPDFHandler(dispatch, errors);
     }
 
+    let pdf: PDFDocumentProxy | null = null;
+
     try {
-      const loadingTask = pdfjs.getDocument(fileUrl);
-      const pdf: PDFDocumentProxy = await loadingTask.promise;
-      const page = await pdf.getPage(pageNumber);
-
-      const scale = 1.5;
-      const viewport: PageViewport = page.getViewport({ scale });
-
-      // Try OffscreenCanvas for better performance
-      const canvas = typeof OffscreenCanvas !== 'undefined'
-        ? new OffscreenCanvas(viewport.width, viewport.height)
-        : document.createElement("canvas");
-
-      if (canvas instanceof HTMLCanvasElement) {
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
-      }
-
-      const context = canvas.getContext("2d");
-      if (!context) {
-        throw new Error("Canvas context not available.");
-      }
-
-      const renderTask: RenderTask = page.render({
-        canvasContext: context as any,
-        viewport: viewport,
+      const loadingTask = pdfjs.getDocument({
+        url: fileUrl,
+        password: password || undefined,
       });
 
-      await renderTask.promise;
+      loadingTask.onPassword = (
+        updatePassword: (arg0: string) => void,
+        reason: number
+      ) => {
+        if (reason === pdfjs.PasswordResponses.NEED_PASSWORD && password) {
+          updatePassword(password);
+        }
+      };
 
-      // Convert to data URL
-      let dataUrl: string;
-      if (canvas instanceof OffscreenCanvas) {
-        const blob = await canvas.convertToBlob({ type: 'image/png' });
-        dataUrl = await blobToDataURL(blob);
-      } else {
-        dataUrl = canvas.toDataURL();
+      pdf = await loadingTask.promise;
+
+      if (pageNumber < 1 || pageNumber > pdf.numPages) {
+        throw new Error(`Page ${pageNumber} out of range (1-${pdf.numPages}).`);
       }
 
-      URL.revokeObjectURL(fileUrl);
-      return dataUrl;
+      const page = await pdf.getPage(pageNumber);
+      const dataUrl = await renderPageToDataUrl(page, 1, 2400);
 
-    } catch (error) {
-      URL.revokeObjectURL(fileUrl);
+      page.cleanup();
+      return dataUrl;
+    } catch (error: any) {
+      if (error?.name === "PasswordException") {
+        const key =
+          error.code === pdfjs.PasswordResponses.INCORRECT_PASSWORD
+            ? "INCORRECT_PASSWORD"
+            : "PASSWORD_REQUIRED";
+
+        dispatch(setField({ errorCode: key, errorMessage: errors[key].message }));
+        return "/images/locked.png";
+      }
+
+      console.error("getNthPageAsImage failed:", error?.name, error?.code, error);
       return DEFAULT_PDF_IMAGE;
+    } finally {
+      await pdf?.destroy();
+      URL.revokeObjectURL(fileUrl);
     }
   });
 }
@@ -563,6 +612,10 @@ export const validateFiles = (
     } else if (errorCode === "UNKNOWN_ERROR") {
       errMsg = errors.UNKNOWN_ERROR.message;
     }
+
+    dispatch(setField({
+      errorMessage: errMsg
+    }));
 
     tid = toast(errMsg);
 

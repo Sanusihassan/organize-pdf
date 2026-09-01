@@ -44,7 +44,7 @@ const Files = ({ errors, drop_files, path, fileCard }: FileProps) => {
         }
 
         // Check size limitations first (cheap checks)
-        if (files.length === 1 && files[0].size >= 100 * 1024 * 1024) {
+        if (files.length === 1 && files[0].size >= 100 * 1000 * 1000) {
           limitationMsg = errors.alerts.singleFileSize;
           dispatch(setField({ limitationMsg }));
           return;
@@ -54,7 +54,7 @@ const Files = ({ errors, drop_files, path, fileCard }: FileProps) => {
           dispatch(setField({ limitationMsg }));
           return;
         }
-        if (files.some((file) => file.size > 50 * 1024 * 1024)) {
+        if (files.some((file) => file.size > 50 * 1000 * 1000)) {
           limitationMsg = errors.alerts.fileSize;
           dispatch(setField({ limitationMsg }));
           return;
