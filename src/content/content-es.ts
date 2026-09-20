@@ -71,6 +71,32 @@ export const downloadFile: _downloadFile = {
   },
   backto: {
     "organize-pdf": "Volver a Organizar PDF"
+  },
+  shareOverlayExtra: {
+    copiedText: "Copiado",
+    copy_link: "Copiar enlace",
+  },
+  premiumToast: {
+    variants: [
+      {
+        message: "¡¿Quieres mejores resultados?! Prueba Premium para obtener mayor formato y precisión.",
+        actionButton: "Probar Premium",
+      },
+      {
+        message: "¿Prefieres una experiencia sin anuncios? Premium elimina los anuncios por completo.",
+        actionButton: "Obtener Premium",
+      },
+    ],
+  },
+  shareOverlay: {
+    "organize-pdf": {
+      modalTitles: ["¡Apóyanos compartiendo!", "¡Únete al movimiento!", "¡Tu apoyo importa!"],
+      modalDescription:
+        "Arrastra las páginas al orden correcto en lugar de exportar, volver a combinar y esperar lo mejor.",
+      shareText:
+        "Reordena, gira o elimina páginas dentro de un PDF, generando un nuevo PDF con las páginas organizadas según tu elección.",
+      url: "https://www.pdfequips.com/organize-pdf",
+    },
   }
 };
 

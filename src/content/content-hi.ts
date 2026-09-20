@@ -71,6 +71,32 @@ export const downloadFile: _downloadFile = {
     },
     backto: {
         "organize-pdf": "PDF संगठन पर वापस जाएं"
+    },
+    shareOverlayExtra: {
+        copiedText: "कॉपी किया गया",
+        copy_link: "लिंक कॉपी करें",
+    },
+    premiumToast: {
+        variants: [
+            {
+                message: "बेहतर परिणाम चाहते हैं? बेहतर फॉर्मेटिंग और सटीकता के लिए Premium आज़माएं!",
+                actionButton: "Premium आज़माएं",
+            },
+            {
+                message: "विज्ञापन-मुक्त अनुभव पसंद करते हैं? Premium विज्ञापनों को पूरी तरह से हटा देता है।",
+                actionButton: "Premium प्राप्त करें",
+            },
+        ],
+    },
+    shareOverlay: {
+        "organize-pdf": {
+            modalTitles: ["शेयर करके हमारा समर्थन करें!", "इस मुहिम से जुड़ें!", "आपका समर्थन मायने रखता है!"],
+            modalDescription:
+                "एक्सपोर्ट करने, फिर से मर्ज करने और अच्छे परिणाम की उम्मीद लगाने के बजाय पन्नों को ड्रैग करके सही क्रम में लाएं।",
+            shareText:
+                "PDF के भीतर पृष्ठों को फिर से क्रमित करता है, घुमाता है या हटाता है, और चुने गए अनुसार व्यवस्थित पृष्ठों के साथ एक नया PDF बनाता है।",
+            url: "https://www.pdfequips.com/organize-pdf",
+        },
     }
 };
 

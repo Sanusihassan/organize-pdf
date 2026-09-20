@@ -71,6 +71,32 @@ export const downloadFile: _downloadFile = {
     },
     backto: {
         "organize-pdf": "العودة إلى تنظيم PDF"
+    },
+    premiumToast: {
+        variants: [
+            {
+                message: "هل تريد نتائج أفضل؟ جرب Premium للحصول على دقة وتنسيق ممتازين!",
+                actionButton: "جرب Premium",
+            },
+            {
+                message: "هل تفضل تجربة خالية من الإعلانات؟ Premium يزيل الإعلانات تمامًا.",
+                actionButton: "احصل على Premium",
+            },
+        ],
+    },
+    shareOverlayExtra: {
+        copiedText: "تم النسخ",
+        copy_link: "نسخ الرابط",
+    },
+    shareOverlay: {
+        "organize-pdf": {
+            modalTitles: ["ادعمنا بالمشاركة!", "انضم إلى المبادرة!", "دعمك يهمنا!"],
+            modalDescription:
+                "سحب الصفحات وترتيبها بالشكل الصحيح بدلاً من إعادة التصدير والدمج والأمل في الحصول على نتيجة جيدة.",
+            shareText:
+                "يعيد ترتيب الصفحات أو تدويرها أو إزالتها داخل ملف PDF، وينتج ملف PDF جديدًا بالصفحات المترتبة كما اخترت.",
+            url: "https://www.pdfequips.com/organize-pdf",
+        },
     }
 };
 

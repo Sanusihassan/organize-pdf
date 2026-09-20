@@ -11,6 +11,7 @@ import AddMoreButton from "./EditArea/AddMoreButton";
 import { SubmitBtn } from "./EditArea/SubmitBtn";
 // import { WarningAlert } from "./WarningAlert";
 import type { Paths } from "../src/content/content";
+import { OutputFileNameInput } from "./DisplayFile/Options/OutputFileNameInput";
 
 type editPageProps = {
   extension: string;
@@ -101,6 +102,7 @@ const EditPage = ({
           </bdi>
         </h5>
         {/* <Options rotate_pdf_options={edit_page.rotate_pdf_options} /> */}
+        <OutputFileNameInput content={edit_page.filenameOptions} />
         <div className="hide-onsmall">
           <SubmitBtn errors={errors} k={path} edit_page={edit_page} />
         </div>

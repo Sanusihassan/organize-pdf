@@ -71,6 +71,32 @@ export const downloadFile: _downloadFile = {
     },
     backto: {
         "organize-pdf": "Retour à Organiser le PDF"
+    },
+    shareOverlayExtra: {
+        copiedText: "Copié",
+        copy_link: "Copier le lien",
+    },
+    premiumToast: {
+        variants: [
+            {
+                message: "Vous voulez de meilleurs résultats ? Essayez Premium pour un formatage et une précision supérieurs !",
+                actionButton: "Essayer Premium",
+            },
+            {
+                message: "Vous préférez une expérience sans publicité ? Premium supprime entièrement les publicités.",
+                actionButton: "Passer à Premium",
+            },
+        ],
+    },
+    shareOverlay: {
+        "organize-pdf": {
+            modalTitles: ["Soutenez-nous en partageant !", "Rejoignez le mouvement !", "Votre soutien compte !"],
+            modalDescription:
+                "Faire glisser les pages dans le bon ordre au lieu d'exporter, de re-fusionner et d'espérer que tout aille bien.",
+            shareText:
+                "Réorganise, pivote ou supprime des pages au sein d'un PDF, générant un nouveau PDF avec les pages disposées selon vos préférences.",
+            url: "https://www.pdfequips.com/organize-pdf",
+        },
     }
 };
 // French (fr) - tools

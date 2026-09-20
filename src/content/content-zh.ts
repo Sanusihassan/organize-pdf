@@ -71,6 +71,32 @@ export const downloadFile: _downloadFile = {
     },
     backto: {
         "organize-pdf": "返回组织PDF"
+    },
+    shareOverlayExtra: {
+        copiedText: "已复制",
+        copy_link: "复制链接",
+    },
+    premiumToast: {
+        variants: [
+            {
+                message: "想要更好的效果？试试 Premium 以获得更出色的排版和准确度！",
+                actionButton: "体验 Premium",
+            },
+            {
+                message: "想要无广告体验？Premium 可完全移除所有广告。",
+                actionButton: "升级 Premium",
+            },
+        ],
+    },
+    shareOverlay: {
+        "organize-pdf": {
+            modalTitles: ["通过分享来支持我们！", "加入我们的行列！", "您的支持非常重要！"],
+            modalDescription:
+                "直接拖拽页面调整至正确顺序，无需反复导出、重新合并并碰运气。",
+            shareText:
+                "重新排序、旋转或删除 PDF 内的页面，并生成按所选顺序排列的新 PDF。",
+            url: "https://www.pdfequips.com/organize-pdf",
+        },
     }
 };
 
