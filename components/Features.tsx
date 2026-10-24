@@ -1,5 +1,3 @@
-import { useSelector } from "react-redux";
-import type { ToolState } from "../src/store";
 import { LockClosedIcon } from "@heroicons/react/outline";
 import EasyIcon from "./icons/EasyIcon";
 import BatchRotationIcon from "./icons/BatchRotationIcon";
@@ -9,12 +7,9 @@ export const Features = ({
 }: {
   features: { title: string; description: string }[];
 }) => {
-  const stateShowTool = useSelector(
-    (state: { tool: ToolState }) => state.tool.showTool,
-  );
   const icons = [EasyIcon, BatchRotationIcon, LockClosedIcon];
   return (
-    <div className={`features${stateShowTool ? "" : " d-none"}`}>
+    <div className="features hide-when-editing">
       {features.map(({ title, description }, i) => {
         const Icon = icons[i];
         return (
