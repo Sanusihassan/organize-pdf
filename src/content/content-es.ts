@@ -4,8 +4,8 @@ import type { adBlockerContentType } from "./content";
 export const tool: _tool = {
   Organize_PDF: {
     title: "Organizar PDF",
-    seoTitle: "Reorganizar Páginas en Línea - Herramienta de Organizador de PDF",
-    description: "Reorganiza fácilmente las páginas de tu documento PDF para adaptarlas a tu orden o secuencia preferida.",
+    seoTitle: "Ordenar Páginas PDF en Línea Gratis - Organizar PDF",
+    description: "Ordena las páginas de un PDF en línea: cambia su orden arrastrando las miniaturas y descarga el nuevo documento. Gratis y sin registro.",
     color: "#6c5ce7",
     type: ".pdf",
     to: "/organize-pdf",
