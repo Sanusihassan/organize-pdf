@@ -4,8 +4,8 @@ import type { adBlockerContentType } from "./content";
 export const tool: _tool = {
     Organize_PDF: {
         title: "تنظيم PDF",
-        seoTitle: "إعادة ترتيب الصفحات عبر الإنترنت - أداة تنظيم PDF",
-        description: "إعادة ترتيب صفحات مستند PDF بسهولة لتناسب ترتيبك أو تسلسلك المفضل.",
+        seoTitle: "ترتيب صفحات PDF مجانًا - تنظيم ملف PDF عبر الإنترنت",
+        description: "رتّب صفحات ملف PDF عبر الإنترنت: غيّر ترتيبها بسحب الصور المصغرة ثم نزّل الملف الجديد. مجانًا وبدون تسجيل.",
         color: "#6c5ce7",
         type: ".pdf",
         to: "/organize-pdf",
