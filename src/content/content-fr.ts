@@ -4,8 +4,8 @@ import type { edit_page as _edit_page, tool as _tool, tools as _tools, downloadF
 export const tool: _tool = {
     Organize_PDF: {
         title: "Organiser PDF",
-        seoTitle: "Réorganiser les Pages en Ligne - Outil d'Organisateur PDF",
-        description: "Réorganisez facilement les pages de votre document PDF selon l'ordre ou la séquence de votre choix.",
+        seoTitle: "Organiser PDF en ligne – Changer l'ordre des pages gratuitement",
+        description: "Organisez un PDF en ligne : changez l'ordre des pages par glisser-déposer et enregistrez le nouveau document. Gratuit et sans inscription.",
         color: "#6c5ce7",
         type: ".pdf",
         to: "/organize-pdf",
